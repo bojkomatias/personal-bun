@@ -7,10 +7,16 @@ export default withTV({
   content: ["./src/**/*.{html,tsx}"],
   theme: {
     extend: {
-      fontFamily: { sans: ['Sora', 'sans'], },
+      fontFamily: { sans: ['Red Hat Display', 'sans'], },
+      fontSize: {
+        xs: ['calc(var(--text-xs) + var(--font-size-offset))', 'calc(var(--line-ht) * (var(--text-xs) + var(--font-size-offset)))'],
+        sm: ['calc(var(--text-sm) + var(--font-size-offset))', 'calc(var(--line-ht) * (var(--text-sm) + var(--font-size-offset)))'],
+        base: ['calc(var(--text-base) + var(--font-size-offset))', 'calc(var(--line-ht) * (var(--text-base) + var(--font-size-offset)))'],
+        lg: ['calc(var(--text-lg) + var(--font-size-offset))', 'calc(var(--line-ht) * (var(--text-lg) + var(--font-size-offset)))'],
+      },
       colors: {
         border: "hsl(var(--border) / 0.1)",
-        ring: "hsl(var(--ring)/0.2)",
+        ring: "hsl(var(--ring) / 0.2)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -39,7 +45,7 @@ export default withTV({
         },
       },
       borderRadius: {
-        xl: "calc(var(--radius) + 4px)",
+        xl: "calc(var(--radius) + 6px)",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",

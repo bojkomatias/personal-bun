@@ -1,16 +1,18 @@
 import { Elysia } from "elysia";
 import staticPlugin from "@elysiajs/static";
-import marketing from "./app/page";
-import settings from "./app/dashboard/settings/page";
-import login from "./app/login/page";
-import intercepted from "./app/intercepted/page";
+
+import index from "./app/route";
+import blog from "./app/blog/route";
+import dashboard from "./app/dashboard/route";
+import login from "./app/login/route";
 
 const app = new Elysia()
-  .use(staticPlugin())
-  .use(marketing)
-  .use(intercepted)
+.use(staticPlugin())
+  .use(index)
+  .use(blog)
   .use(login)
-  .use(settings)
+  .use(dashboard)
+  .get("/styles.css", () => Bun.file("./src/output.css"))
   .listen(3000);
 
 export type App = typeof app;

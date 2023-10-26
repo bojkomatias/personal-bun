@@ -12,7 +12,7 @@ type User = {
   name: string;
   image: string | null;
   email: string;
-  role: "customer" | "owner" | "admin";
+  role: "client" | "admin";
 } & JWTPayloadSpec;
 
 export const DashboardLayout = ({
@@ -42,13 +42,13 @@ const Tabs = ({ role }: { role: Role }) => (
         .map((item) => (
           <Hover.Item class="relative mb-1.5 hover:text-accent-foreground">
             <button
-              class={button()}
+              class={button({ intent: "hover" })}
               hx-get={item.href}
               hx-push-url="true"
               hx-target="#dashboard-content"
               hx-swap="innerHTML"
-              _="init if window.location.pathname contains @hx-get then add .navigation-indicator end
-              on htmx:afterOnLoad tell the target take .navigation-indicator"
+              _="init if window.location.pathname contains @hx-get then add .tab-indicator end
+              on htmx:afterOnLoad tell the target take .border-accent .tab-indicator"
             >
               <i class={item.icon} aria-hidden="true" />
               {dict.get(item.name)}

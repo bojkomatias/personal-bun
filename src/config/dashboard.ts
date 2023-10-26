@@ -11,6 +11,6 @@ export const dashboardNav: Navigation[] = [
     name: "settings",
     href: "/dashboard/settings",
     icon: "i-lucide-settings",
-    clearance: ["customer", "owner", "admin"],
+    clearance: ["client", "admin"],
   },
 ];

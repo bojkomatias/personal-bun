@@ -9,7 +9,7 @@ type User = {
   name: string;
   image: string | null;
   email: string;
-  role: "customer" | "owner" | "admin";
+  role: "client" | "admin";
 } & JWTPayloadSpec;
 
 export const UserNavigation = ({ user }: { user: User }) => {
@@ -70,7 +70,7 @@ export const UserNavigation = ({ user }: { user: User }) => {
           <Hover.Item>
             <button
               class={dropdown().item({ class: "font-bold" })}
-              hx-post="/api/auth/logout"
+              hx-post="/auth/logout"
               hx-push-url="true"
               hx-target="body"
               hx-swap="outerHTML"

@@ -1,7 +1,8 @@
 export const siteConfig = {
-  name: "Activity",
-  description: "Lorem",
-  keywords: "Hateoas",
+  name: "Matías Bojko",
+  description: "A software engineer personal page and dashboard",
+  keywords:
+    "software, engineer, tech, dashboard, blog, ui, development, enterprise, freelance, projects",
   author: "Matías Bojko Slekis",
   url: "http://localhost:3000",
   ogImage: "",
@@ -10,3 +11,20 @@ export const siteConfig = {
     twitter: "https://twitter.com/bojko_matias",
   },
 };
+
+type Navigation = {
+  name: string;
+  href: GetRoutes;
+  icon?: string;
+};
+
+export const siteNavigation: Navigation[] = [
+  {
+    name: "Case Studies",
+    href: "/blog",
+  },
+  {
+    name: "Blog",
+    href: "/blog",
+  },
+];

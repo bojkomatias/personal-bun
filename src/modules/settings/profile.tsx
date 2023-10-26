@@ -1,6 +1,6 @@
 import { InsertUser, SelectUser } from "@/db/schema/user";
 import { details } from "@/components/detail-list";
-import { Input } from "@/components/input";
+import { input } from "@/components/input";
 import { dict } from "@/utils/dictionary";
 import { card } from "@/components/card";
 import { button } from "@/components/button";
@@ -54,7 +54,7 @@ Profile.Attribute = ({
     <>
       <span safe>{value}</span>
       <button
-        hx-get={`/api/settings/${id}/${attribute}/edit?value=${value}`}
+        hx-get={`/dashboard/settings/${id}/${attribute}/edit?value=${value}`}
         hx-target="closest dd"
         hx-swap="innerHTML"
         class={button({ size: "xs" })}
@@ -76,25 +76,24 @@ Profile.AttributeEdit = ({
 }) => {
   return (
     <form
-      hx-patch={`/api/settings/${id}`}
+      hx-patch={`/dashboard/settings/${id}`}
       hx-target="this"
       hx-swap="outerHTML"
-      class="mt-4 flex h-8 items-center gap-x-4 sm:mt-0"
+      class="mt-4 flex h-8 w-full items-center gap-x-4 sm:mt-0"
     >
-      <Input
+      <input
         name={attribute}
         value={value?.toString()}
         type="text"
-        class="flex-grow py-0"
-        rt
-        rb
+        class={input()}
       />
+      <span class="flex-grow" />
       <span class="flex gap-2">
         <button class={button({ intent: "primary", size: "xs" })}>
           {dict.get("save")}
         </button>
         <button
-          hx-get={`/api/settings/${id}/${attribute}?value=${value}`}
+          hx-get={`/dashboard/settings/${id}/${attribute}?value=${value}`}
           type="reset"
           class={button({ size: "xs" })}
         >

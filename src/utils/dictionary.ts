@@ -6,8 +6,6 @@ export const dict = new Map();
 dict.set("id", "UUID");
 dict.set("name", "Nombre");
 dict.set("email", "Email");
-dict.set("password", "Constraseña");
-dict.set("currentPassword", "Constraseña actual");
 dict.set("role", "Rol");
 dict.set("phone", "Teléfono");
 dict.set("address", "Dirección");
@@ -23,7 +21,7 @@ dict.set("createdAt", "Fecha de creación");
 dict.set("updatedAt", "Última edición");
 
 // Roles
-dict.set("customer", "Cliente");
+dict.set("client", "Cliente");
 dict.set("owner", "Propietario");
 dict.set("admin", "Administrador");
 
