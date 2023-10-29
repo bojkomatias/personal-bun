@@ -1,9 +1,9 @@
 import { InsertUser, SelectUser } from "@/db/schema/user";
-import { details } from "@/components/detail-list";
-import { input } from "@/components/input";
+import { details } from "@/components/ui/detail-list";
+import { input } from "@/components/ui/input";
 import { dict } from "@/utils/dictionary";
-import { card } from "@/components/card";
-import { button } from "@/components/button";
+import { card } from "@/components/ui/card";
+import { button } from "@/components/ui/button";
 
 const Profile = ({ user }: { user: SelectUser }) => (
   <div class={card().base()}>

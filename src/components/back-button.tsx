@@ -1,5 +1,5 @@
 import { dict } from "@/utils/dictionary";
-import { button } from "./button";
+import { button } from "./ui/button";
 
 export const BackButton = () => (
   <button

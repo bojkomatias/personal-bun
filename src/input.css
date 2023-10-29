@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-    @apply selection:bg-accent;
+    @apply selection:bg-accent selection:text-accent-foreground;
   }
   ::-webkit-scrollbar {
     @apply h-0.5 w-0.5 border-0;
@@ -16,9 +16,6 @@
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
-  form {
-    @apply m-0;
   }
 
   :root {
@@ -42,7 +39,7 @@
     --destructive: 5 80% 40%;
     --destructive-foreground: 0 0% 90%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
@@ -50,54 +47,59 @@
     --text-lg: 1.125rem;
     --text-xl: 1.25rem;
     --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+    --text-7xl: 4.5rem;
 
-    --line-ht: 1.8;
-    --font-size-offset: 0px;
+    --line-ht: var(--font-size-offset) * 2;
+    --font-size-offset: 0;
   }
   /* Change theme */
   .dark {
-    --background: 195 20% 8%;
-    --foreground: 195 20% 96%;
-    --card: 195 30% 10%;
-    --card-foreground: 195 30% 90%;
-    --muted: 220 15% 14%;
-    --muted-foreground: 220 15% 75%;
+    --background: 240 10% 4%;
+    --foreground: 0 0% 96%;
+    --card: 240 10% 5%;
+    --card-foreground: 0 0% 92%;
+    --muted: 240 5% 10%;
+    --muted-foreground: 240 5% 75%;
 
-    --primary: 190 80% 45%;
-    --primary-foreground: var(--foreground);
-    --secondary: 195 30% 30%;
+    --primary: 240 4% 95%;
+    --primary-foreground: var(--background);
+    --secondary: 240 4% 20%;
     --secondary-foreground: var(--foreground);
-    --accent: 190 50% 40%;
+    --accent: 240 2% 80%;
     --accent-foreground: var(--background);
   }
   .light {
-    --background: 189 20% 96%;
-    --foreground: 189 20% 8%;
-    --card: 190 20% 94%;
-    --card-foreground: 190 20% 10%;
+    --background: 0 0% 98%;
+    --foreground: 222.2 84% 5%;
+    --card: 0 0% 96%;
+    --card-foreground: 222.2 84% 7%;
     --muted: 240 5% 90%;
     --muted-foreground: 240 5% 25%;
 
-    --primary: 220 50% 25%;
+    --primary: 222 80% 5%;
     --primary-foreground: var(--background);
-    --secondary: 201 40% 15%;
-    --secondary-foreground: var(--card);
-    --accent: 210 50% 37%;
+    --secondary: 0 0% 80%;
+    --secondary-foreground: var(--foreground);
+    --accent: 222 60% 10%;
     --accent-foreground: var(--background);
   }
-  .sky {
-    --background: 182 100% 92%;
-    --foreground: 55 20% 6%;
-    --card: 182 90% 90%;
-    --card-foreground: 55 20% 10%;
-    --muted: 182 50% 86%;
-    --muted-foreground: 190 30% 28%;
+  .green {
+    --background: 110 16% 95%;
+    --foreground: 195 50% 6%;
+    --card: 110 10% 93%;
+    --card-foreground: 195 50% 10%;
+    --muted: 0 2% 88%;
+    --muted-foreground: 190 30% 25%;
 
-    --primary: 184 79% 45%;
+    --primary: 100 100% 25%;
     --primary-foreground: var(--background);
-    --secondary: 190 60% 32%;
-    --secondary-foreground: var(--background);
-    --accent: 186 80% 40%;
+    --secondary: 90 50% 70%;
+    --secondary-foreground: var(--foreground);
+    --accent: 130 30% 60%;
     --accent-foreground: var(--foreground);
   }
   .synthwave {
@@ -113,55 +115,70 @@
     --secondary: 55 100% 55%;
     --secondary-foreground: var(--background);
     --accent: 170 100% 50%;
+    --accent-foreground: var(--background);
+  }
+  .warm {
+    --background: 50 30% 94%;
+    --foreground: 50 40% 6%;
+    --card: 50 35% 92%;
+    --card-foreground: 50 40% 10%;
+    --muted: 45 20% 90%;
+    --muted-foreground: 50 10% 26%;
+
+    --primary: 48 100% 45%;
+    --primary-foreground: var(--foreground);
+    --secondary: 111 10% 65%;
+    --secondary-foreground: var(--foreground);
+    --accent: 57 85% 50%;
     --accent-foreground: var(--foreground);
   }
-  .golden {
-    --background: 50 100% 94%;
-    --foreground: 50 40% 6%;
-    --card: 50 80% 90%;
-    --card-foreground: 50 40% 10%;
-    --muted: 50 50% 82%;
-    --muted-foreground: 50 50% 16%;
+  .modern {
+    --background: 200 10% 10%;
+    --foreground: 240 5% 96%;
+    --card: 200 10% 12%;
+    --card-foreground: 240 6% 94%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 70%;
 
-    --primary: 55 100% 50%;
-    --primary-foreground: var(--foreground);
-    --secondary: 35 80% 20%;
+    --primary: 14 100% 50%;
+    --primary-foreground: var(--background);
+    --secondary: 55 100% 45%;
     --secondary-foreground: var(--background);
-    --accent: 55 100% 60%;
+    --accent: 343 100% 45%;
     --accent-foreground: var(--foreground);
   }
 
   /* Change de font size */
   .font-smaller {
-    --font-size-offset: -3px;
+    --font-size-offset: 0.8;
   }
   .font-small {
-    --font-size-offset: -1.5px;
+    --font-size-offset: 0.9;
   }
   .font-regular {
-    --font-size-offset: 0px;
+    --font-size-offset: 1;
   }
   .font-large {
-    --font-size-offset: 1.5px;
+    --font-size-offset: 1.1;
   }
   .font-larger {
-    --font-size-offset: 3px;
+    --font-size-offset: 1.2;
   }
   /* Change radius */
   .radius-none {
     --radius: -0.5rem;
   }
   .radius-small {
-    --radius: 0.45rem;
+    --radius: 0.5rem;
   }
   .radius-normal {
-    --radius: 0.7rem;
+    --radius: 0.75rem;
   }
   .radius-large {
     --radius: 1rem;
   }
   .radius-round {
-    --radius: 1.6rem;
+    --radius: 1.4rem;
   }
 }
 

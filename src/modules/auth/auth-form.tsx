@@ -1,6 +1,6 @@
 import { BackButton } from "@/components/back-button";
-import { button } from "@/components/button";
-import { card } from "@/components/card";
+import { button } from "@/components/ui/button";
+import { card } from "@/components/ui/card";
 
 const google = new URL("auth", "https://accounts.google.com/o/oauth2/v2/");
 google.searchParams.set(

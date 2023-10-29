@@ -4,15 +4,23 @@ const { iconsPlugin, getIconCollections } = require("@egoist/tailwindcss-icons")
 
 export default withTV({
   darkMode: 'class',
-  content: ["./src/**/*.{html,tsx}"],
+  content: ["./src/**/*.{html,tsx,ts}"],
   theme: {
     extend: {
       fontFamily: { sans: ['Red Hat Display', 'sans'], },
       fontSize: {
-        xs: ['calc(var(--text-xs) + var(--font-size-offset))', 'calc(var(--line-ht) * (var(--text-xs) + var(--font-size-offset)))'],
-        sm: ['calc(var(--text-sm) + var(--font-size-offset))', 'calc(var(--line-ht) * (var(--text-sm) + var(--font-size-offset)))'],
-        base: ['calc(var(--text-base) + var(--font-size-offset))', 'calc(var(--line-ht) * (var(--text-base) + var(--font-size-offset)))'],
-        lg: ['calc(var(--text-lg) + var(--font-size-offset))', 'calc(var(--line-ht) * (var(--text-lg) + var(--font-size-offset)))'],
+        xs: ['calc(var(--text-xs) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xs))'],
+        sm: ['calc(var(--text-sm) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-sm))'],
+        base: ['calc(var(--text-base) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-base))'],
+        lg: ['calc(var(--text-lg) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-lg))'],
+        xl: ['calc(var(--text-xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
+        '2xl': ['calc(var(--text-2xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-2xl))'],
+        '3xl': ['calc(var(--text-3xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-3xl))'],
+        '4xl': ['calc(var(--text-4xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-4xl))'],
+        '5xl': ['calc(var(--text-5xl) * var(--font-size-offset))', 'var(--text-5xl)'],
+        '6xl': ['calc(var(--text-6xl) * var(--font-size-offset))', 'var(--text-6xl)'],
+        '7xl': ['calc(var(--text-7xl) * var(--font-size-offset))', 'var(--text-7xl)'],
+
       },
       colors: {
         border: "hsl(var(--border) / 0.1)",
@@ -47,8 +55,8 @@ export default withTV({
       borderRadius: {
         xl: "calc(var(--radius) + 6px)",
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius) - 3px)",
+        sm: "calc(var(--radius) - 5px)",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants";
 
 export const button = tv(
   {
-    base: "group inline-flex cursor-default items-center justify-center gap-1.5 whitespace-nowrap rounded-md font-semibold text-card-foreground outline-offset-2 outline-border transition-colors focus:outline active:opacity-80 disabled:pointer-events-none disabled:opacity-50",
+    base: "group pointer-events-auto inline-flex cursor-default items-center justify-center gap-1.5 whitespace-nowrap rounded-md font-semibold text-card-foreground outline-offset-2 outline-border transition-colors focus:outline active:opacity-80 disabled:pointer-events-none disabled:opacity-50",
     variants: {
       intent: {
         primary:
@@ -10,7 +10,7 @@ export const button = tv(
         secondary:
           "bg-secondary text-secondary-foreground outline-secondary hover:bg-secondary/90",
         accent:
-          "bg-accent text-accent-foreground outline-accent hover:bg-accent/90",
+          "bg-accent text-accent-foreground outline-accent hover:bg-accent/90 ",
         outline:
           "bg-transparent ring-1 ring-inset ring-border hover:bg-muted hover:ring-ring focus:outline-none",
         ghost: "bg-transparent hover:bg-muted focus:outline-none",
@@ -25,6 +25,7 @@ export const button = tv(
         sm: "h-7 px-2.5 text-xs",
         base: "h-9 px-4 text-sm",
         lg: "h-11 rounded-lg px-5 text-base",
+        "icon-lg": "h-12 w-12 p-0",
         icon: "h-9 w-9 p-0",
         "icon-xs": "h-6 w-6 p-0",
       },

@@ -1,5 +1,5 @@
 import { BaseLayout } from "@/app/layout";
-import { button } from "@/components/button";
+import { button } from "@/components/ui/button";
 import { blogNavigation } from "@/config/blog";
 
 export default function BlogLayout({

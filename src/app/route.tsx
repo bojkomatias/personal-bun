@@ -1,8 +1,6 @@
 import Elysia from "elysia";
 import Template from "@/app/template";
 import setup from "@/config/setup";
-import { checkbox, input, label } from "@/components/input";
-import Storybook from "@/components/__storybook";
 
 const marketingPage = new Elysia({
   name: "marketing",
@@ -20,11 +18,7 @@ const marketingPage = new Elysia({
     (app) =>
       app
         .get("/", async () => {
-          return (
-            <Template>
-              <Storybook />
-            </Template>
-          );
+          return <Template>Hi</Template>;
         })
         .post("/", ({ body }) => console.log(body)),
   );

@@ -34,7 +34,7 @@ export default function Head() {
         rel="stylesheet"
       />
       {/* Favicon + Title */}
-      <link rel="icon" href="/public/vercel.svg" />
+      {/* <link rel="icon" href="/public/vercel.svg" /> */}
       <title>{siteConfig.name}</title>
     </head>
   );

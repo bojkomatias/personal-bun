@@ -1,6 +1,6 @@
 import { cx } from "@/utils/cx";
-import { _trigger, dropdown, _content } from "@/components/dropdown";
-import { button } from "../button";
+import { _trigger, dropdown, _content } from "@/components/ui/dropdown";
+import { button } from "../ui/button";
 import { SearchBar } from "../search-bar";
 import { Hover } from "../hover-transition";
 import { Action, Column } from "./utils";

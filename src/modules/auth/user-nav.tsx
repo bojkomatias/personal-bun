@@ -1,5 +1,5 @@
-import { button } from "@/components/button";
-import { dropdown, _trigger, _content } from "@/components/dropdown";
+import { button } from "@/components/ui/button";
+import { dropdown, _trigger, _content } from "@/components/ui/dropdown";
 import { Hover } from "@/components/hover-transition";
 import { dict } from "@/utils/dictionary";
 import { JWTPayloadSpec } from "@elysiajs/jwt";

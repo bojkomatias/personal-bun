@@ -1,6 +1,6 @@
 import { siteConfig, siteNavigation } from "@/config/site";
 import { BaseLayout } from "@/app/layout";
-import { button } from "@/components/button";
+import { button } from "@/components/ui/button";
 
 export default function Template({
   children,

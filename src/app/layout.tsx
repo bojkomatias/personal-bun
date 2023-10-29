@@ -1,6 +1,9 @@
 import { siteConfig } from "@/config/site";
-import { button } from "@/components/button";
+import { button } from "@/components/ui/button";
 import Head from "./head";
+import { ThemePicker } from "@/components/theme-picker";
+import { FontSizePicker } from "@/components/font-size-picker";
+import { RadiusPicker } from "@/components/radius-picker";
 
 /** Used to inject into other layouts */
 export function BaseLayout({ children }: { children?: any }) {
@@ -33,7 +36,6 @@ export function BaseLayout({ children }: { children?: any }) {
 const Footer = () => (
   <footer class="border-t border-border bg-card">
     <div class="flex flex-col items-center gap-6 px-2 py-8 sm:flex-row sm:px-6 lg:px-16">
-      <i class="i-lucide-activity h-6 w-6" />
       <p class="flex-auto text-center text-sm leading-loose text-muted-foreground sm:text-left">
         Built by{" "}
         <a
@@ -47,6 +49,11 @@ const Footer = () => (
           Github
         </a>
       </p>
+      <div class="relative h-12 w-40">
+        <RadiusPicker />
+        <FontSizePicker />
+        <ThemePicker />
+      </div>
     </div>
   </footer>
 );
