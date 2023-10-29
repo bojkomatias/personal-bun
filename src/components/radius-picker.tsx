@@ -1,7 +1,7 @@
 import { RadioSegment } from "./radio-segment";
 
 const _ =
-  "on mutation of @value set localStorage['theme-radius'] to my value send setTheme to <html/> end init if localStorage['theme-radius'] then set my value to localStorage['theme-radius'] end";
+  "on mutation of @value set localStorage['theme-radius'] to my value send setTheme to <html/> end init if localStorage['theme-radius'] then set my value to localStorage['theme-radius'] else set my value to 'radius-small' end";
 
 export function RadiusPicker() {
   return (
@@ -61,7 +61,7 @@ export function RadiusPickerFull() {
           { value: "radius-large", node: "Large" },
           { value: "radius-round", node: "Round" },
         ]}
-        size="base"
+        size="sm"
         vertical
         id="radius-picker-full"
       />

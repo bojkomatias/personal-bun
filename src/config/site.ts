@@ -20,8 +20,8 @@ type Navigation = {
 
 export const siteNavigation: Navigation[] = [
   {
-    name: "Case Studies",
-    href: "/blog",
+    name: "Home",
+    href: "/",
   },
   {
     name: "Blog",

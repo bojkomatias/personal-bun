@@ -1,7 +1,7 @@
 import { RadioSegment } from "./radio-segment";
 
 const _ =
-  "on mutation of @value set localStorage['theme-font-size'] to my value send setTheme to <html/> end init if localStorage['theme-font-size'] then set my value to localStorage['theme-font-size'] end";
+  "on mutation of @value set localStorage['theme-font-size'] to my value send setTheme to <html/> end init if localStorage['theme-font-size'] then set my value to localStorage['theme-font-size'] else set my value to 'font-regular' end";
 
 export function FontSizePicker() {
   return (
@@ -51,7 +51,7 @@ export function FontSizePickerFull() {
           { value: "font-large", node: "Large" },
           { value: "font-larger", node: "Larger" },
         ]}
-        size="base"
+        size="sm"
         vertical
         id="font-size-picker-full"
       />

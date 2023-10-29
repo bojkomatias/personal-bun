@@ -1,35 +1,60 @@
-import { siteConfig } from "@/config/site";
+import { siteConfig, siteNavigation } from "@/config/site";
 import { button } from "@/components/ui/button";
-import Head from "./head";
 import { ThemePicker } from "@/components/theme-picker";
 import { FontSizePicker } from "@/components/font-size-picker";
 import { RadiusPicker } from "@/components/radius-picker";
+import BaseTemplate from "./template";
+import { segment } from "@/components/ui/segment";
 
 /** Used to inject into other layouts */
-export function BaseLayout({ children }: { children?: any }) {
+export function Layout({ children }: { children?: any }) {
   return (
-    <html
-      lang="en"
-      _="init send setTheme to me end
-      on setTheme set @class to (localStorage.theme + ' ' + localStorage['theme-radius'] + ' ' + localStorage['theme-font-size'])"
-    >
-      <Head />
-      <body
-        class="w-screen overflow-x-hidden bg-background text-foreground antialiased"
-        hx-boost="true"
-        hx-ext="response-targets, preload, head-support"
-        _="on click send close to .dropdown end
-        on htmx:afterOnLoad tell <button/> remove @disabled"
-        // Handles click outside for all menus
-      >
-        {/* Notifications fall all here! */}
-        <div id="notification" />
-        <div id="page-content" class="min-h-[100svh]">
-          {children}
+    <BaseTemplate>
+      <div class="flex justify-end gap-2 px-2 pt-2">
+        <div class={segment().base({})} _={segment()._indicator()}>
+          <button
+            class={segment().item({ size: "icon-sm", style: "muted" })}
+            _="on click set cookies.lang to 'es'"
+          >
+            🇦🇷
+          </button>
+          <button
+            class={segment().item({ size: "icon-sm", style: "muted" })}
+            _="on click set cookies.lang to 'en'"
+          >
+            🇺🇸
+          </button>
         </div>
-        <Footer />
-      </body>
-    </html>
+        <button
+          class={button({ intent: "primary" })}
+          hx-get="/dashboard/settings"
+          hx-target="body"
+          hx-push-url="true"
+        >
+          Dashboard
+        </button>
+      </div>
+      <header class="flex h-12 items-center justify-center px-2">
+        <nav
+          class={segment().base({ style: "none", static: true })}
+          _={segment()._indicator()}
+        >
+          {siteNavigation.map(({ name, href }) => (
+            <a
+              class={segment().item({ size: "sm", style: "underline" })}
+              href={href}
+              hx-boost="true"
+              _="init if window.location.pathname is equal to @href then add @aria-checked='true' end"
+            >
+              {name}
+            </a>
+          ))}
+        </nav>
+      </header>
+
+      <main class="min-h-screen p-8">{children}</main>
+      <Footer />
+    </BaseTemplate>
   );
 }
 

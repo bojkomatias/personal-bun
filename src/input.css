@@ -53,8 +53,8 @@
     --text-6xl: 3.75rem;
     --text-7xl: 4.5rem;
 
+    --font-size-offset: 1;
     --line-ht: var(--font-size-offset) * 2;
-    --font-size-offset: 0;
   }
   /* Change theme */
   .dark {

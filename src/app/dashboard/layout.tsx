@@ -1,12 +1,12 @@
 import { dashboardNav } from "@/config/dashboard";
 import { Role } from "@/db/schema/user";
 import { dict } from "@/utils/dictionary";
-import { BaseLayout } from "../layout";
 import { Hover } from "../../components/hover-transition";
 import { UserNavigation } from "@/modules/auth/user-nav";
 import { JWTPayloadSpec } from "@elysiajs/jwt";
 import { button } from "@/components/ui/button";
 import { segment } from "@/components/ui/segment";
+import BaseTemplate from "../template";
 
 type User = {
   id: string;
@@ -23,7 +23,7 @@ export const DashboardLayout = ({
   token: User;
   children?: any;
 }) => (
-  <BaseLayout>
+  <BaseTemplate>
     <header class="flex flex-col items-end border-b border-border pt-2">
       <UserNavigation user={token} />
       <Tabs role={token.role} />
@@ -32,7 +32,7 @@ export const DashboardLayout = ({
     <main id="dashboard-content" class="min-h-screen pb-8">
       {children}
     </main>
-  </BaseLayout>
+  </BaseTemplate>
 );
 
 const Tabs = ({ role }: { role: Role }) => (

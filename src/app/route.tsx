@@ -1,6 +1,6 @@
 import Elysia from "elysia";
-import Template from "@/app/template";
 import setup from "@/config/setup";
+import Page from "./page";
 
 const marketingPage = new Elysia({
   name: "marketing",
@@ -17,8 +17,8 @@ const marketingPage = new Elysia({
     },
     (app) =>
       app
-        .get("/", async () => {
-          return <Template>Hi</Template>;
+        .get("/", () => {
+          return <Page />;
         })
         .post("/", ({ body }) => console.log(body)),
   );

@@ -38,8 +38,11 @@ export const AuthForm = () => {
           </a>
           <div class="my-8 h-0 border-t border-border" />
           <div class="px-2 text-sm">
-            By clicking "Continue with Google", you agree to our Terms of
-            Service↗ and Privacy Policy↗.
+            By clicking "Continue with Google", you agree to our{" "}
+            <a href="/" class={button({ intent: "link" })}>
+              Terms of Service↗
+            </a>
+            .
           </div>
         </div>
       </div>

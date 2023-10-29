@@ -7,11 +7,9 @@ import dashboard from "./app/dashboard/route";
 import login from "./app/login/route";
 
 const app = new Elysia()
-.use(staticPlugin())
-  .use(index)
-  .use(blog)
-  .use(login)
-  .use(dashboard)
+  .use(staticPlugin())
+  // Wrap in I18n handler
+  .group("/*", (app) => app.use(index).use(blog).use(login).use(dashboard))
   .get("/styles.css", () => Bun.file("./src/output.css"))
   .listen(3000);
 

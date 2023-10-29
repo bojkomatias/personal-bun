@@ -162,7 +162,7 @@ export function DataRows<T>({
               actions.length > 1 ? (
                 <div class={dropdown().base()}>
                   <button
-                    class={button({ intent: "ghost", size: "icon-xs" })}
+                    class={button({ intent: "ghost", size: "icon-sm" })}
                     _={_trigger}
                   >
                     <i class="i-lucide-more-horizontal" />

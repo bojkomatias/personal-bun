@@ -22,6 +22,7 @@ const item = tv({
   base: "relative hidden group-hover:flex group-[.is-static]:flex aria-checked:flex",
   variants: {
     style: {
+      muted: "aria-checked:bg-muted aria-checked:text-card-foreground",
       background: "aria-checked:bg-accent aria-checked:text-accent-foreground",
       underline:
         "after:invisible after:absolute after:inset-x-1 after:-bottom-1 after:h-0.5 after:rounded-lg after:bg-accent after:shadow after:shadow-accent/50 aria-checked:after:visible",

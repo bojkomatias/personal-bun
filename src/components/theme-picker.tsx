@@ -1,6 +1,6 @@
 import { RadioSegment } from "./radio-segment";
 const _ =
-  "on mutation of @value set localStorage['theme'] to my value send setTheme to <html/> end init if localStorage['theme'] then set my value to localStorage['theme'] end";
+  "on mutation of @value set localStorage['theme'] to my value send setTheme to <html/> end init if localStorage['theme'] then set my value to localStorage['theme'] else set my value to 'acid' end";
 
 export function ThemePicker() {
   return (
@@ -50,7 +50,7 @@ export function ThemePickerFull() {
           { value: "synthwave", node: "Synthwave" },
           { value: "modern", node: "Modern" },
         ]}
-        size="base"
+        size="sm"
         vertical
         id="theme-picker-full"
       />

@@ -1,7 +1,6 @@
 import { Elysia, t } from "elysia";
 import jwt from "@elysiajs/jwt";
 import { html } from "@elysiajs/html";
-import { i18n } from "./i18n";
 import cookie from "@elysiajs/cookie";
 
 if (Bun.env.JWT_SECRET === undefined)
@@ -28,7 +27,6 @@ if (Bun.env.GOOGLE_CLIENT_SECRET === undefined)
 const setup = new Elysia({ name: "setup" })
   .use(html())
   .use(cookie())
-  .use(i18n)
   .use(
     jwt({
       name: "jwt",

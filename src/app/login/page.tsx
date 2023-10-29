@@ -1,10 +1,10 @@
 import { AuthForm } from "@/modules/auth/auth-form";
-import { BaseLayout } from "../layout";
+import BaseTemplate from "../template";
 
 export default function LoginPage() {
   return (
-    <BaseLayout>
+    <BaseTemplate>
       <AuthForm />
-    </BaseLayout>
+    </BaseTemplate>
   );
 }
