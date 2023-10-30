@@ -4,10 +4,10 @@ export const siteConfig = {
   keywords:
     "software, engineer, tech, dashboard, blog, ui, development, enterprise, freelance, projects",
   author: "Matías Bojko Slekis",
-  url: "http://localhost:3000",
+  url: "https://matiasbojko.com",
   ogImage: "",
   links: {
-    github: "https://github.com/bojkomatias/donde-comer-en-la-villa",
+    github: "https://github.com/bojkomatias/personal-bun",
     twitter: "https://twitter.com/bojko_matias",
   },
 };
@@ -20,11 +20,30 @@ type Navigation = {
 
 export const siteNavigation: Navigation[] = [
   {
-    name: "Home",
-    href: "/",
+    name: "Blog",
+    href: "/blog",
   },
+  {
+    name: "Studies",
+    href: "/studies",
+  },
+  {
+    name: "Docs",
+    href: "/docs",
+  },
+];
+
+export const footerNavigation: Navigation[] = [
   {
     name: "Blog",
     href: "/blog",
+  },
+  {
+    name: "Docs",
+    href: "/docs",
+  },
+  {
+    name: "Terms",
+    href: "/terms",
   },
 ];

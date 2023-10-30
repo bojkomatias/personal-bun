@@ -1,11 +1,13 @@
 import { card } from "@/components/ui/card";
 import { Layout } from "../layout";
 import { button } from "@/components/ui/button";
+import { PatternBlob } from "@/components/background-patterns";
 
-export default function BlogPage() {
+export default function BlogsPage() {
   return (
     <Layout>
-      <div class="flex justify-center gap-6">
+      <PatternBlob />
+      <div class="mx-auto flex max-w-5xl justify-center gap-6 py-8">
         <div class={card({ width: "contained" }).base()}>
           <h2 class={card().title()}>Why I started blogging</h2>
           <div class={card().description()}>Matias Bojko - 15 min read</div>
@@ -13,9 +15,12 @@ export default function BlogPage() {
             <BlogPost />
           </div>
           <div class={card().footer()}>
-            <button class={button({ intent: "background", class: "w-full" })}>
+            <a
+              href="/blog/sape"
+              class={button({ intent: "background", class: "w-full" })}
+            >
               Read More
-            </button>
+            </a>
           </div>
         </div>
         <div class={card({ width: "contained" }).base()}>

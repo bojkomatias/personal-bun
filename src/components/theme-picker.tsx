@@ -8,10 +8,6 @@ export function ThemePicker() {
       <input id="theme-picker" type="hidden" _={_} />
       <RadioSegment
         items={[
-          {
-            value: "system",
-            node: <i class="i-lucide-monitor" />,
-          },
           { value: "light", node: <i class="i-lucide-sun" /> },
           { value: "dark", node: <i class="i-lucide-moon" /> },
           { value: "acid", node: <i class="i-lucide-flask-conical" /> },
@@ -35,10 +31,6 @@ export function ThemePickerFull() {
       <input id="theme-picker-full" type="hidden" _={_} />
       <RadioSegment
         items={[
-          {
-            value: "system",
-            node: "System",
-          },
           { value: "light", node: "Light" },
           {
             value: "dark",

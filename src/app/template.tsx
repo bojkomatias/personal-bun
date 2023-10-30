@@ -13,7 +13,7 @@ export default function BaseTemplate({
     >
       <Head />
       <body
-        class="w-screen overflow-x-hidden bg-background text-foreground antialiased"
+        class="w-screen overflow-x-hidden bg-background text-foreground subpixel-antialiased"
         hx-boost="true"
         hx-ext="response-targets, preload, head-support"
         _="on click send close to .dropdown end

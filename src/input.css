@@ -181,25 +181,22 @@
     @apply selection:bg-accent selection:text-accent-foreground;
   }
   p {
-    @apply text-sm;
+    @apply text-sm font-light sm:text-base;
   }
   h4 {
-    @apply text-base font-medium tracking-tight;
+    @apply text-base font-medium tracking-tight sm:text-lg;
   }
   h3 {
-    @apply text-lg font-semibold tracking-tight;
+    @apply text-lg font-semibold tracking-tight sm:text-xl;
   }
   h2 {
-    @apply text-xl font-semibold tracking-tight;
+    @apply text-xl font-semibold tracking-tight sm:text-2xl;
   }
   h1 {
-    @apply text-3xl font-bold tracking-tight;
+    @apply text-4xl font-extrabold tracking-tight sm:text-6xl;
   }
   ul > li {
     @apply before:mx-1 before:content-['・'];
-  }
-  code {
-    @apply rounded-md bg-background p-2 ring-1 ring-inset ring-border;
   }
 }
 

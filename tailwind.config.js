@@ -15,12 +15,12 @@ export default withTV({
         base: ['calc(var(--text-base) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-base))'],
         lg: ['calc(var(--text-lg) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-lg))'],
         xl: ['calc(var(--text-xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
-        '2xl': ['calc(var(--text-2xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-2xl))'],
-        '3xl': ['calc(var(--text-3xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-3xl))'],
-        '4xl': ['calc(var(--text-4xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-4xl))'],
-        '5xl': ['calc(var(--text-5xl) * var(--font-size-offset))', 'var(--text-5xl)'],
-        '6xl': ['calc(var(--text-6xl) * var(--font-size-offset))', 'var(--text-6xl)'],
-        '7xl': ['calc(var(--text-7xl) * var(--font-size-offset))', 'var(--text-7xl)'],
+        '2xl': ['calc(var(--text-2xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
+        '3xl': ['calc(var(--text-3xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
+        '4xl': ['calc(var(--text-4xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
+        '5xl': ['calc(var(--text-5xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-3xl))'],
+        '6xl': ['calc(var(--text-6xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-3xl))'],
+        '7xl': ['calc(var(--text-7xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-4xl))'],
 
       },
       colors: {
@@ -59,13 +59,11 @@ export default withTV({
         md: "calc(var(--radius) - 3px)",
         sm: "calc(var(--radius) - 5px)",
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      }
     },
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('tailwindcss-animate'),
     iconsPlugin({
       // Select the icon collections you want to use
       collections: getIconCollections(["lucide"]),
