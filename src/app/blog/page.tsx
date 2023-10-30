@@ -7,8 +7,8 @@ export default function BlogsPage() {
   return (
     <Layout>
       <PatternBlob />
-      <div class="mx-auto flex max-w-5xl justify-center gap-6 py-8">
-        <div class={card({ width: "contained" }).base()}>
+      <div class="mx-auto grid max-w-5xl gap-6 py-8 sm:grid-cols-2">
+        <div class={card().base()}>
           <h2 class={card().title()}>Why I started blogging</h2>
           <div class={card().description()}>Matias Bojko - 15 min read</div>
           <div class={card().content()}>
@@ -23,7 +23,7 @@ export default function BlogsPage() {
             </a>
           </div>
         </div>
-        <div class={card({ width: "contained" }).base()}>
+        <div class={card().base()}>
           <h2 class={card().title()}>Why I started blogging</h2>
           <div class={card().description()}>Matias Bojko - 15 min read</div>
           <div class={card().content()}>
