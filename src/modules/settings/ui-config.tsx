@@ -7,7 +7,7 @@ import { ThemePickerFull } from "@/components/theme-picker";
 
 export const UIConfig = () => (
   <div class={card().base()}>
-    <h2 class={card().title()}>Theme</h2>
+    <h3 class={card().title()}>Theme</h3>
     <p class={card().description()}>Customize your theme</p>
 
     <div class={card().content({ class: "px-0" })}>

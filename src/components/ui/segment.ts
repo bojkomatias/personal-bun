@@ -8,8 +8,6 @@ const base = tv({
     static: { true: "is-static" },
     style: {
       none: "bg-background",
-      underline:
-        "bg-background after:absolute after:inset-x-2 after:bottom-0 after:h-0.5 after:rounded-lg after:bg-border",
       card: "rounded-lg bg-card shadow",
       outline: "rounded-lg bg-background shadow ring-1 ring-inset ring-ring",
     },
@@ -25,7 +23,7 @@ const item = tv({
       muted: "aria-checked:bg-muted aria-checked:text-card-foreground",
       background: "aria-checked:bg-accent aria-checked:text-accent-foreground",
       underline:
-        "after:invisible after:absolute after:inset-x-1 after:-bottom-1 after:h-0.5 after:rounded-lg after:bg-accent after:shadow after:shadow-accent/50 aria-checked:after:visible",
+        "after:invisible after:absolute after:inset-x-3 after:-bottom-1 after:h-0.5 after:rounded-lg after:bg-accent after:shadow after:shadow-accent/50 aria-checked:after:visible",
     },
   },
   defaultVariants: { style: "background" },

@@ -2,12 +2,13 @@
 const { withTV } = require('tailwind-variants/transformer')
 const { iconsPlugin, getIconCollections } = require("@egoist/tailwindcss-icons")
 
+
 export default withTV({
   darkMode: 'class',
   content: ["./src/**/*.{html,tsx,ts}"],
   theme: {
     extend: {
-      fontFamily: { sans: ['Red Hat Display', 'sans'], },
+      fontFamily: { sans: ['Kumbh Sans', 'sans'], },
       fontSize: {
         xs: ['calc(var(--text-xs) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xs))'],
         sm: ['calc(var(--text-sm) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-sm))'],

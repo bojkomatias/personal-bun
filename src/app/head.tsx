@@ -29,8 +29,14 @@ export default function Head() {
       {/* TailwindCSS */}
       <link href="/styles.css" rel="preload stylesheet" />
       {/* Fonts */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
-        href="https://api.fontshare.com/v2/css?f[]=red-hat-display@2,1&display=swap"
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin="true"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet"
       />
       {/* Favicon + Title */}

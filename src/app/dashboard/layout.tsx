@@ -1,10 +1,8 @@
 import { dashboardNav } from "@/config/dashboard";
 import { Role } from "@/db/schema/user";
 import { dict } from "@/utils/dictionary";
-import { Hover } from "../../components/hover-transition";
 import { UserNavigation } from "@/modules/auth/user-nav";
 import { JWTPayloadSpec } from "@elysiajs/jwt";
-import { button } from "@/components/ui/button";
 import { segment } from "@/components/ui/segment";
 import BaseTemplate from "../template";
 
@@ -39,7 +37,7 @@ const Tabs = ({ role }: { role: Role }) => (
   <nav
     class={segment().base({
       static: true,
-      style: "underline",
+      style: "none",
       class: "self-start overflow-x-auto rounded-lg lg:px-8",
     })}
     _={segment()._indicator()}

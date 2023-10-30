@@ -11,20 +11,6 @@ export function Layout({ children }: { children?: any }) {
   return (
     <BaseTemplate>
       <div class="flex justify-end gap-2 px-2 pt-2">
-        <div class={segment().base({})} _={segment()._indicator()}>
-          <button
-            class={segment().item({ size: "icon-sm", style: "muted" })}
-            _="on click set cookies.lang to 'es'"
-          >
-            🇦🇷
-          </button>
-          <button
-            class={segment().item({ size: "icon-sm", style: "muted" })}
-            _="on click set cookies.lang to 'en'"
-          >
-            🇺🇸
-          </button>
-        </div>
         <button
           class={button({ intent: "primary" })}
           hx-get="/dashboard/settings"
@@ -41,7 +27,7 @@ export function Layout({ children }: { children?: any }) {
         >
           {siteNavigation.map(({ name, href }) => (
             <a
-              class={segment().item({ size: "sm", style: "underline" })}
+              class={segment().item({ size: "base", style: "underline" })}
               href={href}
               hx-boost="true"
               _="init if window.location.pathname is equal to @href then add @aria-checked='true' end"

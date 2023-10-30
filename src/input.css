@@ -3,21 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply selection:bg-accent selection:text-accent-foreground;
-  }
-  ::-webkit-scrollbar {
-    @apply h-0.5 w-0.5 border-0;
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply rounded-lg bg-ring/20;
-  }
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
   :root {
     --background: 189 20% 8%;
     --foreground: 189 20% 96%;
@@ -107,8 +92,8 @@
     --foreground: 330 50% 96%;
     --card: 320 40% 12%;
     --card-foreground: 330 50% 94%;
-    --muted: 160 5% 16%;
-    --muted-foreground: 160 10% 70%;
+    --muted: 320 15% 16%;
+    --muted-foreground: 330 10% 70%;
 
     --primary: 338 100% 50%;
     --primary-foreground: var(--foreground);
@@ -137,14 +122,14 @@
     --foreground: 240 5% 96%;
     --card: 200 10% 12%;
     --card-foreground: 240 6% 94%;
-    --muted: 0 0% 16%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 200 5% 16%;
+    --muted-foreground: 200 5% 70%;
 
-    --primary: 14 100% 50%;
+    --primary: 55 100% 50%;
     --primary-foreground: var(--background);
-    --secondary: 55 100% 45%;
+    --secondary: 15 100% 45%;
     --secondary-foreground: var(--background);
-    --accent: 343 100% 45%;
+    --accent: 345 100% 45%;
     --accent-foreground: var(--foreground);
   }
 
@@ -179,6 +164,42 @@
   }
   .radius-round {
     --radius: 1.4rem;
+  }
+
+  ::-webkit-scrollbar {
+    @apply h-0.5 w-0.5 border-0;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-lg bg-ring/20;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  body {
+    @apply selection:bg-accent selection:text-accent-foreground;
+  }
+  p {
+    @apply text-sm;
+  }
+  h4 {
+    @apply text-base font-medium tracking-tight;
+  }
+  h3 {
+    @apply text-lg font-semibold tracking-tight;
+  }
+  h2 {
+    @apply text-xl font-semibold tracking-tight;
+  }
+  h1 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+  ul > li {
+    @apply before:mx-1 before:content-['・'];
+  }
+  code {
+    @apply rounded-md bg-background p-2 ring-1 ring-inset ring-border;
   }
 }
 

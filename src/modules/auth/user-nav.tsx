@@ -1,6 +1,6 @@
 import { button } from "@/components/ui/button";
 import { dropdown, _trigger, _content } from "@/components/ui/dropdown";
-import { Hover } from "@/components/hover-transition";
+
 import { dict } from "@/utils/dictionary";
 import { JWTPayloadSpec } from "@elysiajs/jwt";
 
@@ -40,46 +40,39 @@ export const UserNavigation = ({ user }: { user: User }) => {
           </div>
         </div>
         <div class={dropdown().separator()} />
-        <Hover>
-          <Hover.Item>
-            <button
-              class={dropdown().item()}
-              hx-get="/dashboard/settings"
-              hx-push-url="true"
-              hx-target="body"
-              hx-swap="outerHTML"
-            >
-              {dict.get("settings")}
-              <i class="i-lucide-settings" />
-            </button>
-          </Hover.Item>
+        <button
+          class={dropdown().item()}
+          hx-get="/dashboard/settings"
+          hx-push-url="true"
+          hx-target="body"
+          hx-swap="outerHTML"
+        >
+          {dict.get("settings")}
+          <i class="i-lucide-settings" />
+        </button>
 
-          <div class={dropdown().separator()} />
+        <div class={dropdown().separator()} />
 
-          <Hover.Item>
-            <button
-              class={dropdown().item()}
-              hx-get="/"
-              hx-push-url="true"
-              hx-target="body"
-              hx-swap="outerHTML"
-            >
-              Página de inicio <i class="i-lucide-external-link" />
-            </button>
-          </Hover.Item>
-          <Hover.Item>
-            <button
-              class={dropdown().item({ class: "font-bold" })}
-              hx-post="/auth/logout"
-              hx-push-url="true"
-              hx-target="body"
-              hx-swap="outerHTML"
-            >
-              {dict.get("logout")}
-              <i class="i-lucide-log-out" />
-            </button>
-          </Hover.Item>
-        </Hover>
+        <button
+          class={dropdown().item()}
+          hx-get="/"
+          hx-push-url="true"
+          hx-target="body"
+          hx-swap="outerHTML"
+        >
+          Página de inicio <i class="i-lucide-external-link" />
+        </button>
+
+        <button
+          class={dropdown().item({ class: "font-bold" })}
+          hx-post="/auth/logout"
+          hx-push-url="true"
+          hx-target="body"
+          hx-swap="outerHTML"
+        >
+          {dict.get("logout")}
+          <i class="i-lucide-log-out" />
+        </button>
 
         <div class={dropdown().separator()} />
 

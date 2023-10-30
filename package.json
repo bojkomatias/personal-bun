@@ -18,6 +18,7 @@
     "@kitajs/html": "^3.0.4",
     "@kitajs/ts-html-plugin": "^1.3.0",
     "@libsql/client": "^0.3.5",
+    "cal-sans": "^1.0.1",
     "drizzle-orm": "^0.28.6",
     "drizzle-typebox": "^0.1.1",
     "elysia": "latest",

@@ -10,7 +10,7 @@ export const dropdown = tv({
     ],
     separator: "my-1 h-0 border-t border-border",
     item: [
-      button({ intent: "hover" }),
+      button({ intent: "ghost" }),
       "h-10 w-full justify-between font-normal text-muted-foreground",
     ],
   },

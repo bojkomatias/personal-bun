@@ -16,7 +16,7 @@ export const AuthForm = () => {
     <div class="mx-auto mt-48 max-w-xl">
       <BackButton />
       <div class={card().base()}>
-        <h2 class={card().title()}>Welcome!</h2>
+        <h3 class={card().title()}>Welcome!</h3>
         <p class={card().description()}>
           If you have an on going project login to keep track
         </p>

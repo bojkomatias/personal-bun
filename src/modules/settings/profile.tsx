@@ -7,7 +7,7 @@ import { button } from "@/components/ui/button";
 
 const Profile = ({ user }: { user: SelectUser }) => (
   <div class={card().base()}>
-    <h2 class={card().title()}>Perfil</h2>
+    <h3 class={card().title()}>Perfil</h3>
     <p class={card().description()}>
       Datos de tu perfil, tené en cuenta que algunos datos son públicos
     </p>

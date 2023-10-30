@@ -13,12 +13,13 @@ export const button = tv(
           "bg-accent text-accent-foreground outline-accent hover:bg-accent/90 ",
         outline:
           "bg-transparent ring-1 ring-inset ring-border hover:bg-muted hover:ring-ring focus:outline-none",
-        ghost: "bg-transparent hover:bg-muted focus:outline-none",
+        ghost:
+          "bg-transparent text-muted-foreground hover:bg-muted hover:text-card-foreground focus:outline-none",
         link: "!p-0 font-medium decoration-accent decoration-2  underline-offset-4 !outline-none hover:underline focus-visible:underline",
         destructive:
           "bg-destructive text-destructive-foreground outline-destructive hover:bg-destructive/90",
-        hover:
-          "hover:bg-transparent hover:text-accent-foreground focus:outline-none",
+        background:
+          "bg-background text-muted-foreground hover:bg-muted hover:text-card-foreground focus:outline-none",
       },
       size: {
         xs: "h-6 px-2 text-xs",

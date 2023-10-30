@@ -2,7 +2,6 @@ import { cx } from "@/utils/cx";
 import { _trigger, dropdown, _content } from "@/components/ui/dropdown";
 import { button } from "../ui/button";
 import { SearchBar } from "../search-bar";
-import { Hover } from "../hover-transition";
 import { Action, Column } from "./utils";
 import { dict } from "@/utils/dictionary";
 import { table } from "@/components/table";
@@ -51,27 +50,24 @@ export function DataTable<T>({
               Columnas
             </div>
             <div class={dropdown().separator()} />
-            <Hover>
-              {columns
-                .filter((e) => !e.disableHiding)
-                .map(({ accessor, header, hidden }) => (
-                  <Hover.Item>
-                    <button
-                      _={`on click tell #${String(
-                        accessor,
-                      )} in next <colgroup/> toggle .hidden end
+
+            {columns
+              .filter((e) => !e.disableHiding)
+              .map(({ accessor, header, hidden }) => (
+                <button
+                  _={`on click tell #${String(
+                    accessor,
+                  )} in next <colgroup/> toggle .hidden end
                   on click tell .${String(
                     accessor,
                   )} in next <table/> toggle .hidden end
                     on click toggle .hidden on <i/> in me`}
-                      class={dropdown().item()}
-                    >
-                      <span> {header ? header : dict.get(accessor)}</span>
-                      <i class={cx("i-lucide-check", hidden && "hidden")} />
-                    </button>
-                  </Hover.Item>
-                ))}
-            </Hover>
+                  class={dropdown().item()}
+                >
+                  <span> {header ? header : dict.get(accessor)}</span>
+                  <i class={cx("i-lucide-check", hidden && "hidden")} />
+                </button>
+              ))}
           </div>
         </div>
       </div>
