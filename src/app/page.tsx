@@ -6,10 +6,26 @@ export default function Page() {
     <Layout>
       <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-          <h1 class="mt-10 max-w-lg">A better way to ship your projects</h1>
+          <h1 class="mt-10 max-w-lg">
+            A{" "}
+            <span class="relative -z-10 inline-block drop-shadow-md before:absolute before:-inset-1 before:block before:rotate-3 before:-skew-x-6 before:-skew-y-6 before:bg-accent">
+              <span class="relative font-black text-accent-foreground">
+                better
+              </span>
+            </span>{" "}
+            way to ship your{" "}
+            <span class="relative -z-10 inline-block drop-shadow-md before:absolute before:-inset-1 before:block before:rotate-3 before:-skew-x-6 before:-skew-y-6 before:bg-primary">
+              <span class="relative font-black text-primary-foreground">
+                projects
+              </span>
+            </span>{" "}
+          </h1>
           <h4 class="mt-6 font-light text-muted-foreground">
-            As a <b class="text-foreground">software & systems engineer</b> I
-            focus on building industry grade software. Welcome to my spot. I
+            As a{" "}
+            <b class="text-foreground drop-shadow-sm">
+              software & systems engineer
+            </b>{" "}
+            I focus on building industry grade software. Welcome to my spot. I
             invite you to explore my projects and learn a bit about my work. And
             of course, don't hesitate to reach out.
           </h4>

@@ -46,6 +46,7 @@ export const UserNavigation = ({ user }: { user: User }) => {
           hx-push-url="true"
           hx-target="body"
           hx-swap="outerHTML"
+          preload
         >
           {dict.get("settings")}
           <i class="i-lucide-settings" />
@@ -59,6 +60,7 @@ export const UserNavigation = ({ user }: { user: User }) => {
           hx-push-url="true"
           hx-target="body"
           hx-swap="outerHTML"
+          preload
         >
           Página de inicio <i class="i-lucide-external-link" />
         </button>

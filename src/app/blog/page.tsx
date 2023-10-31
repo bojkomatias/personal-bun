@@ -7,7 +7,7 @@ export default async function BlogsPage() {
 
   return (
     <Layout>
-      <div class="mx-auto grid max-w-5xl gap-6 py-8 sm:grid-cols-2">
+      <div class="mx-auto max-w-5xl gap-6 py-8 sm:grid sm:grid-cols-2">
         {blogs.map((blog) => (
           <BlogCard blog={blog} />
         ))}

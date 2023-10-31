@@ -51,6 +51,7 @@ const Tabs = ({ role }: { role: Role }) => (
           hx-push-url="true"
           hx-target="#dashboard-content"
           hx-swap="innerHTML"
+          preload
           _="init if window.location.pathname contains @hx-get then add @aria-checked='true' end"
         >
           <i class={item.icon} aria-hidden="true" />

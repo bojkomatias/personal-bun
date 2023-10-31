@@ -19,6 +19,7 @@ export function Layout({ children }: { children?: any }) {
           hx-get="/dashboard/settings"
           hx-target="body"
           hx-push-url="true"
+          preload
         >
           Dashboard
         </button>
@@ -32,6 +33,7 @@ export function Layout({ children }: { children?: any }) {
             class={segment().item({ size: "base", style: "underline" })}
             href={"/"}
             hx-boost="true"
+            preload
             _="init if window.location.pathname is '/' then add @aria-checked='true' end"
           >
             Home
@@ -41,6 +43,7 @@ export function Layout({ children }: { children?: any }) {
               class={segment().item({ size: "base", style: "underline" })}
               href={href}
               hx-boost="true"
+              preload
               _="init if window.location.pathname contains @href then add @aria-checked='true' end"
             >
               {name}
@@ -62,6 +65,7 @@ const Footer = () => (
         {footerNavigation.map(({ name, href }) => (
           <a
             href={href}
+            preload
             class={button({
               intent: "link",
               class:
@@ -82,13 +86,18 @@ const Footer = () => (
     <p class="text-center font-light text-muted-foreground sm:text-left">
       Built by{" "}
       <a
+        preload
         href={siteConfig.links.twitter}
         class={button({ intent: "link", class: "lowercase" })}
       >
         bojkomatias
       </a>
       .<br class="block sm:hidden" /> Source code available on{" "}
-      <a href={siteConfig.links.github} class={button({ intent: "link" })}>
+      <a
+        href={siteConfig.links.github}
+        preload
+        class={button({ intent: "link" })}
+      >
         Github
       </a>
     </p>

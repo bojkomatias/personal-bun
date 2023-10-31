@@ -57,6 +57,7 @@ Profile.Attribute = ({
         hx-get={`/dashboard/settings/${id}/${attribute}/edit?value=${value}`}
         hx-target="closest dd"
         hx-swap="innerHTML"
+        preload
         class={button({ size: "xs" })}
       >
         {dict.get("update")}
