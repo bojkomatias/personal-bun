@@ -17,7 +17,7 @@ export default function BaseTemplate({
         hx-boost="true"
         hx-ext="response-targets, preload, head-support"
         _="on click send close to .dropdown end
-    on htmx:afterOnLoad tell <button/> remove @disabled"
+    on htmx:afterOnLoad tell <button/> remove @disabled end"
         // Handles click outside for all menus
       >
         {/* Notifications fall all here! */}

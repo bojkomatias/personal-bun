@@ -8,6 +8,7 @@ export default function Head() {
       <meta name="keywords" content={siteConfig.keywords} />
       <meta name="author" content={siteConfig.author} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
       {/* HTMX */}
       <script
         src="https://unpkg.com/htmx.org@1.9.6"

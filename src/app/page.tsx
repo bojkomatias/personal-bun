@@ -1,18 +1,17 @@
 import { button } from "@/components/ui/button";
 import { Layout } from "./layout";
-import { PatternSquare } from "@/components/background-patterns";
 
 export default function Page() {
   return (
     <Layout>
-      <PatternSquare />
       <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
           <h1 class="mt-10 max-w-lg">A better way to ship your projects</h1>
           <h4 class="mt-6 font-light text-muted-foreground">
-            Esse id magna consectetur fugiat non dolor in ad laboris magna
-            laborum ea consequat. Nisi irure aliquip nisi adipisicing veniam
-            voluptate id. In veniam incididunt ex veniam adipisicing sit.
+            As a <b class="text-foreground">software & systems engineer</b> I
+            focus on building industry grade software. Welcome to my spot. I
+            invite you to explore my projects and learn a bit about my work. And
+            of course, don't hesitate to reach out.
           </h4>
           <div class="mt-10 flex items-center gap-x-6">
             <a href="#" class={button({ intent: "primary" })}>

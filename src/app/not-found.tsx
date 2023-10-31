@@ -6,7 +6,7 @@ export default function NotFound() {
     <BaseTemplate>
       <div class="grid place-items-center px-6 py-40 lg:px-8">
         <div class="text-center">
-          <p class="text-base font-semibold text-primary">404</p>
+          <p class="text-base font-semibold text-accent">404</p>
           <h1>Page not found</h1>
           <p class="mt-6 text-muted-foreground">
             Sorry, we couldn’t find the page you’re looking for.

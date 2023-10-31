@@ -1,6 +1,7 @@
 import setup from "@/config/setup";
 import Elysia from "elysia";
 import settings from "./settings/route";
+import blogs from "./blogs/route";
 
 const dashboard = new Elysia({
   name: "dashboard",
@@ -13,7 +14,7 @@ const dashboard = new Elysia({
         if (!token) return (set.redirect = "/login");
       },
     },
-    (app) => app.use(settings),
+    (app) => app.use(settings).use(blogs),
   );
 
 export default dashboard;

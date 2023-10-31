@@ -19,7 +19,7 @@ export default withTV({
         '3xl': ['calc(var(--text-3xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
         '4xl': ['calc(var(--text-4xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
         '5xl': ['calc(var(--text-5xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-2xl))'],
-        '6xl': ['calc(var(--text-6xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-2xl))'],
+        '6xl': ['calc(var(--text-6xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-3xl))'],
         '7xl': ['calc(var(--text-7xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-3xl))'],
       },
       colors: {

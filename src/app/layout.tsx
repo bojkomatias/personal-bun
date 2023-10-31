@@ -5,11 +5,14 @@ import { FontSizePicker } from "@/components/font-size-picker";
 import { RadiusPicker } from "@/components/radius-picker";
 import BaseTemplate from "./template";
 import { segment } from "@/components/ui/segment";
+import { PatternSquare } from "@/components/background-patterns";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 /** Used to inject into other layouts */
 export function Layout({ children }: { children?: any }) {
   return (
     <BaseTemplate>
+      <PatternSquare />
       <div class="flex justify-end gap-2 px-2 pt-2">
         <button
           class={button({ intent: "primary" })}
@@ -20,7 +23,7 @@ export function Layout({ children }: { children?: any }) {
           Dashboard
         </button>
       </div>
-      <header class="flex h-12 items-center justify-center px-2">
+      <header class="z-20 flex h-12 items-center justify-center px-2">
         <nav
           class={segment().base({ style: "none", static: true })}
           _={segment()._indicator()}
@@ -45,7 +48,7 @@ export function Layout({ children }: { children?: any }) {
           ))}
         </nav>
       </header>
-
+      <ScrollToTop />
       <main class="min-h-screen p-8">{children}</main>
       <Footer />
     </BaseTemplate>

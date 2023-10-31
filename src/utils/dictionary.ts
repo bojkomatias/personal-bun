@@ -4,53 +4,32 @@
 export const dict = new Map();
 // Input fields
 dict.set("id", "UUID");
-dict.set("name", "Nombre");
+dict.set("name", "Name");
 dict.set("email", "Email");
-dict.set("role", "Rol");
-dict.set("phone", "Teléfono");
-dict.set("address", "Dirección");
-dict.set("location", "Ubicación");
-dict.set("instagram", "Instagram");
-dict.set("twitter", "Twitter");
-dict.set("webpage", "Página web");
-dict.set("featured", "Promocionado");
-dict.set("enabled", "Habilitado");
-dict.set("description", "Descripción");
-dict.set("image", "Imagen");
-dict.set("createdAt", "Fecha de creación");
-dict.set("updatedAt", "Última edición");
+dict.set("role", "Role");
+dict.set("createdAt", "Created at");
+dict.set("updatedAt", "Updated at");
 
 // Roles
-dict.set("client", "Cliente");
-dict.set("owner", "Propietario");
-dict.set("admin", "Administrador");
+dict.set("client", "Client");
+dict.set("admin", "Admin");
 
 // Colecciones
-dict.set("user", "Usuario");
-dict.set("users", "Usuarios");
-dict.set("profile", "Perfil");
-dict.set("settings", "Configuración");
-dict.set("business", "Local");
-dict.set("businesses", "Locales");
-dict.set("tag", "Categoría");
-dict.set("tags", "Categorías");
-dict.set("dashboard", "Panel");
+dict.set("user", "User");
+dict.set("users", "Users");
+dict.set("profile", "Profile");
+dict.set("settings", "Settings");
+dict.set("dashboard", "Dashboard");
+dict.set("blog", "Blog");
+dict.set("blogs", "Blogs");
 
 // Acciones
-dict.set("save", "Guardar");
-dict.set("cancel", "Cancelar");
-dict.set("update", "Actualizar");
-dict.set("edit", "Editar");
-dict.set("create", "Crear");
-dict.set("view", "Ver");
-dict.set("back", "Volver");
+dict.set("save", "Save");
+dict.set("cancel", "Cancel");
+dict.set("update", "Update");
+dict.set("edit", "Edit");
+dict.set("create", "Create");
+dict.set("view", "View");
+dict.set("back", "Back");
 dict.set("login", "Login");
-dict.set("logout", "Salir");
-
-// Extra cols
-dict.set("ownerName", "Propietario");
-dict.set("yourBusiness", "Tu local");
-dict.set("businessHours", "Horarios de atención");
-dict.set("bHours", "Horarios");
-dict.set("opens", "Abre");
-dict.set("closes", "Cierra");
+dict.set("logout", "Logout");

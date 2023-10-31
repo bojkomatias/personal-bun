@@ -6,6 +6,9 @@ const blog = new Elysia({ name: "blog", prefix: "/blog" })
   .get("/", () => {
     return <BlogsPage />;
   })
-  .get("/:slug", ({ params: { slug } }) => <BlogPage slug={slug} />);
+  .get("/:slug", ({ params: { slug } }) => {
+    if (slug === "x") throw "Not";
+    return <BlogPage slug={slug} />;
+  });
 
 export default blog;

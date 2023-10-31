@@ -19,7 +19,7 @@ export const DashboardLayout = ({
   children,
 }: {
   token: User;
-  children?: any;
+  children: JSX.Element | JSX.Element[];
 }) => (
   <BaseTemplate>
     <header class="flex flex-col items-end border-b border-border pt-2">

@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 export const input = tv({
   base: [
     "peer block w-full rounded-md border-0 bg-background py-1.5 pl-4 text-sm text-foreground ring-1 ring-inset ring-ring focus:ring-accent",
-    "disabled:cursor-not-allowed disabled:opacity-50",
+    "outline-none disabled:cursor-not-allowed disabled:opacity-50",
   ],
   variants: {
     type: {

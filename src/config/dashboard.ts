@@ -8,6 +8,12 @@ type Navigation = {
 };
 export const dashboardNav: Navigation[] = [
   {
+    name: "blogs",
+    href: "/dashboard/blog",
+    icon: "i-lucide-file",
+    clearance: ["admin"],
+  },
+  {
     name: "settings",
     href: "/dashboard/settings",
     icon: "i-lucide-settings",

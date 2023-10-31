@@ -177,6 +177,9 @@
     -webkit-appearance: none;
     margin: 0;
   }
+  textarea::-webkit-resizer {
+    -webkit-appearance: none;
+  }
   body {
     @apply selection:bg-accent selection:text-accent-foreground;
   }
