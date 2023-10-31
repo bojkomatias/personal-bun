@@ -1,6 +1,5 @@
 import { Elysia } from "elysia";
 import staticPlugin from "@elysiajs/static";
-import "cal-sans";
 import index from "./app/route";
 import blog from "./app/blog/route";
 import dashboard from "./app/dashboard/route";
