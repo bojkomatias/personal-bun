@@ -16,7 +16,7 @@ coverage*
 fly.toml
 drizzle
 sqlite.db
-/src/output.css
+/src/input.css
 **/README.md
 
 
