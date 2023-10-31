@@ -1,20 +1,21 @@
 import { Layout } from "@/app/layout";
 import { BackButton } from "@/components/back-button";
+import { getBlogBySlug } from "@/services/blog";
+import { marked } from "marked";
 
 export default async function BlogPage({ slug }: { slug: string }) {
+  const blog = await getBlogBySlug(slug);
   return (
     <Layout>
-      <div class="mx-auto max-w-5xl py-8">
-        <BackButton />
-        <h1>Why I started blogging</h1>
-        <h4>Matias Bojko - 15 min read</h4>
-
-        <h3>The begging</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis
-          adipisci aliquam aperiam ratione eum eius omnis obcaecati vero non rem
-          a iure, esse molestias. Repellendus, quo! Ab libero quis ducimus?
-        </p>
+      <div class="mx-auto flex max-w-3xl flex-col lg:max-w-5xl lg:flex-row">
+        <div class="lg:mt-10 ">
+          <BackButton />
+        </div>
+        <div class="mx-auto w-full max-w-3xl space-y-4 px-2 py-8 sm:px-4 lg:px-8">
+          <h1>{blog.title}</h1>
+          <p class="tabular-nums">{blog.createdAt}</p>
+          <div>{marked.parse(blog.content)}</div>
+        </div>
       </div>
     </Layout>
   );

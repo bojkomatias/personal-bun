@@ -21,17 +21,17 @@ export function NewBlogForm() {
             placeholder="A title"
             class={input()}
           />
-          <label class={label()}>Content</label>
-          <span
-            contenteditable="true"
-            class={input({
-              class:
-                "min-h-[6rem] before:text-muted-foreground/50 empty:before:content-['Write_some_markdown_...']",
-            })}
-            role="textbox"
-            _="on blur set @value of #content to my innerText"
+          <label for="content" class={label()}>
+            Content
+          </label>
+
+          <textarea
+            id="content"
+            name="content"
+            rows="5"
+            class={input({ class: "font-mono" })}
+            placeholder="Write down some markdown ..."
           />
-          <input id="content" name="content" type="hidden" />
         </div>
         <div class={card().footer({ class: "justify-end" })}>
           <button

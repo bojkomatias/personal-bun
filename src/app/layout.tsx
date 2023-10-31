@@ -13,7 +13,7 @@ export function Layout({ children }: { children?: any }) {
   return (
     <BaseTemplate>
       <PatternSquare />
-      <div class="flex justify-end gap-2 px-2 pt-2">
+      <div class="flex justify-end gap-2 px-2">
         <button
           class={button({ intent: "primary" })}
           hx-get="/dashboard/settings"
@@ -49,7 +49,7 @@ export function Layout({ children }: { children?: any }) {
         </nav>
       </header>
       <ScrollToTop />
-      <main class="min-h-screen p-8">{children}</main>
+      <main class="min-h-screen px-2 py-8 sm:px-4 lg:px-8">{children}</main>
       <Footer />
     </BaseTemplate>
   );

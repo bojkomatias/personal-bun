@@ -11,12 +11,11 @@ export const button = tv(
           "bg-secondary text-secondary-foreground outline-secondary hover:bg-secondary/90",
         accent:
           "bg-accent text-accent-foreground outline-accent hover:bg-accent/90",
-        muted:
-          "bg-muted text-card-foreground hover:bg-muted/90 focus:outline-none",
+        muted: "bg-muted hover:bg-muted/90 focus:outline-none",
         outline:
           "bg-transparent ring-1 ring-inset ring-border hover:bg-muted hover:ring-ring focus:outline-none",
         ghost:
-          "bg-transparent text-muted-foreground hover:bg-muted hover:text-card-foreground focus:outline-none",
+          "bg-transparent hover:bg-muted hover:text-card-foreground focus:outline-none",
         link: "!p-0 font-medium decoration-accent decoration-2  underline-offset-4 !outline-none hover:underline focus-visible:underline",
         destructive:
           "bg-destructive text-destructive-foreground outline-destructive hover:bg-destructive/90",
