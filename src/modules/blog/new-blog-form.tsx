@@ -22,14 +22,13 @@ export function NewBlogForm() {
             class={input()}
           />
           <label for="content" class={label()}>
-            Content
+            Blog Post
           </label>
-
           <textarea
             id="content"
             name="content"
-            rows="5"
-            class={input({ class: "font-mono" })}
+            rows="8"
+            class={input({ class: "font-mono sm:text-base" })}
             placeholder="Write down some markdown ..."
           />
         </div>

@@ -6,8 +6,11 @@ export const blog = sqliteTable("blog", {
   id: integer("id").primaryKey().notNull(),
   slug: text("slug").unique().notNull(),
   title: text("title").unique().notNull(),
+  read: text("read").notNull(),
   content: text("content").notNull(),
-  createdAt: integer("created_at").default(sql`(CURRENT_TIMESTAMP)`),
+  createdAt: integer("created_at")
+    .default(sql`(CURRENT_TIMESTAMP)`)
+    .notNull(),
 });
 
 export type SelectBlog = typeof blog.$inferSelect; // return type when queried

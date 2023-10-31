@@ -13,7 +13,7 @@ export function Layout({ children }: { children?: any }) {
   return (
     <BaseTemplate>
       <PatternSquare />
-      <div class="flex justify-end gap-2 px-2">
+      <div class="flex justify-end gap-2 px-4">
         <button
           class={button({ intent: "primary" })}
           hx-get="/dashboard/settings"

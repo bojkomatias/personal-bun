@@ -193,13 +193,20 @@
     @apply text-lg font-semibold tracking-tight sm:text-xl;
   }
   h2 {
-    @apply text-xl font-semibold tracking-tight sm:text-2xl;
+    @apply text-2xl font-semibold tracking-tight sm:text-3xl;
   }
   h1 {
     @apply text-4xl font-extrabold tracking-tight sm:text-6xl;
   }
-  ul > li {
-    @apply before:mx-1 before:content-['・'];
+  /*  Custom re-usable prose tailwind typography */
+  .blog-prose {
+    @apply prose prose-sm mx-auto space-y-6 px-2 sm:prose-lg lg:prose-xl prose-a:text-primary prose-code:rounded-lg prose-code:text-sm prose-pre:rounded-xl prose-pre:bg-muted prose-pre:p-1.5 prose-hr:border-ring;
+  }
+  .dark .blog-prose,
+  .modern .blog-prose,
+  .acid .blog-prose,
+  .synthwave .blog-prose {
+    @apply prose-invert;
   }
 }
 
