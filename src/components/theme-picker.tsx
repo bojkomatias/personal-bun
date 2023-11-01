@@ -27,7 +27,7 @@ export function ThemePicker() {
 
 export function ThemePickerFull() {
   return (
-    <div class="relative flex h-10 w-24 justify-end hover:z-10">
+    <div class="relative z-20 flex h-10 w-24 justify-end">
       <input id="theme-picker-full" type="hidden" _={_} />
       <RadioSegment
         items={[

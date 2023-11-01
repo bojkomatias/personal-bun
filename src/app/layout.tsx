@@ -6,7 +6,6 @@ import { RadiusPicker } from "@/components/radius-picker";
 import BaseTemplate from "./template";
 import { segment } from "@/components/ui/segment";
 import { PatternSquare } from "@/components/background-patterns";
-import { ScrollToTop } from "@/components/scroll-to-top";
 
 /** Used to inject into other layouts */
 export function Layout({ children }: { children?: any }) {
@@ -51,8 +50,8 @@ export function Layout({ children }: { children?: any }) {
           ))}
         </nav>
       </header>
-      <ScrollToTop />
-      <main class="min-h-screen px-2 py-8 sm:px-4 lg:px-8">{children}</main>
+
+      <main class="min-h-screen pt-12">{children}</main>
       <Footer />
     </BaseTemplate>
   );

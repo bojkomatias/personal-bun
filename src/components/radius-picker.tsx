@@ -51,7 +51,7 @@ export function RadiusPicker() {
 
 export function RadiusPickerFull() {
   return (
-    <div class="relative flex h-10 w-24 justify-end hover:z-10">
+    <div class="relative z-10 flex h-10 w-24 justify-end">
       <input type="hidden" name="" id="radius-picker-full" _={_} />
       <RadioSegment
         items={[

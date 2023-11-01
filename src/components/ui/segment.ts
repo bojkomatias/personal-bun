@@ -5,7 +5,7 @@ const base = tv({
   base: "group relative flex h-max w-max items-stretch gap-1 p-1",
   variants: {
     vertical: { true: "flex-col" },
-    static: { true: "is-static" },
+    static: { true: "is-open" },
     style: {
       none: "bg-transparent",
       card: "rounded-lg bg-card shadow",
@@ -17,7 +17,7 @@ const base = tv({
 
 const item = tv({
   extend: button,
-  base: "relative hidden group-hover:flex group-[.is-static]:flex aria-checked:flex",
+  base: "relative hidden group-[.is-open]:flex aria-checked:flex",
   variants: {
     style: {
       muted: "aria-checked:bg-muted aria-checked:text-card-foreground",
@@ -30,7 +30,7 @@ const item = tv({
 });
 
 const _indicator = () =>
-  "on click if target is me halt else add @aria-checked='false' to <button/> in me then tell target tell closest <button/> add @aria-checked='true'";
+  "on click if I do not match .is-open then add .is-open to me else if target is not me then add @aria-checked='false' to <button/> in me then tell target tell closest <button/> add @aria-checked='true' then remove .is-open from me";
 
 const _value = (id: string) =>
   `init repeat for x in <button/> in me if value of #${id} is equal to value of x add @aria-checked='true' to x end end ${_indicator()} set value of #${id} to @value`;

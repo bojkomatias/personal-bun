@@ -41,7 +41,7 @@ export function FontSizePicker() {
 
 export function FontSizePickerFull() {
   return (
-    <div class="relative flex h-10 w-24 justify-end hover:z-10">
+    <div class="relative z-30 flex h-10 w-24 justify-end">
       <input type="hidden" id="font-size-picker-full" _={_} />
       <RadioSegment
         items={[
