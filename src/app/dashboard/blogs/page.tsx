@@ -1,12 +1,11 @@
 import { DashboardHeading } from "@/components/dashboard/heading";
 import { DashboardContent } from "@/components/dashboard/wrapper";
-import { SelectBlog } from "@/db/schema/blog";
+import { blog } from "@/db/schema/blog";
 import { dict } from "@/utils/dictionary";
-import blogs from "./route";
-import { getBlogs } from "@/services/blog";
+import { db } from "@/db";
 
 export async function Blogs() {
-  const blogs = await getBlogs();
+  const blogs = await db.select().from(blog);
   return (
     <>
       <DashboardHeading title={dict.get("settings")} />

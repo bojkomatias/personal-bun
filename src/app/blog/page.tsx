@@ -1,9 +1,10 @@
 import { Layout } from "../layout";
-import { getBlogs } from "@/services/blog";
 import { BlogCard } from "@/modules/blog/blog-card";
+import { db } from "@/db";
+import { blog } from "@/db/schema/blog";
 
 export default async function BlogsPage() {
-  const blogs = await getBlogs();
+  const blogs = await db.select().from(blog);
 
   return (
     <Layout>

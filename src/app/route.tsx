@@ -1,8 +1,6 @@
 import Elysia from "elysia";
 import setup from "@/config/setup";
 import Page from "./page";
-import BaseTemplate from "./template";
-import { button } from "@/components/ui/button";
 import NotFound from "./not-found";
 import Docs from "./docs/page";
 

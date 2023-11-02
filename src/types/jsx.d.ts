@@ -8,6 +8,14 @@ type PutRoutes = RoutesByType<Schema, "put">;
 type DeleteRoutes = RoutesByType<Schema, "delete">;
 type PatchRoutes = RoutesByType<Schema, "patch">;
 
+type TokenUser = {
+  id: string;
+  name: string;
+  image: string | null;
+  email: string;
+  role: "client" | "admin";
+} & JWTPayloadSpec;
+
 declare namespace JSX {
   interface HtmlTag {
     // Get without starts with api, because it can be used as href

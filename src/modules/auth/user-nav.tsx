@@ -1,18 +1,8 @@
 import { button } from "@/components/ui/button";
 import { dropdown, _trigger, _content } from "@/components/ui/dropdown";
-
 import { dict } from "@/utils/dictionary";
-import { JWTPayloadSpec } from "@elysiajs/jwt";
 
-type User = {
-  id: string;
-  name: string;
-  image: string | null;
-  email: string;
-  role: "client" | "admin";
-} & JWTPayloadSpec;
-
-export const UserNavigation = ({ user }: { user: User }) => {
+export const UserNavigation = ({ user }: { user: TokenUser }) => {
   if (!user) return <></>;
   return (
     <div class={dropdown().base({ class: "mr-4" })}>

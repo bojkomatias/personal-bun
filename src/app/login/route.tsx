@@ -1,9 +1,11 @@
 import setup from "@/config/setup";
 import OAuth2 from "@/utils/oauth2";
 import Elysia from "elysia";
-import { createUser, getUserByEmail } from "@/services/user";
 import { UserNavigation } from "@/modules/auth/user-nav";
 import LoginPage from "./page";
+import { db } from "@/db";
+import { user } from "@/db/schema/user";
+import { eq } from "drizzle-orm";
 
 const auth = new Elysia({ name: "auth" })
   .use(setup)
@@ -12,22 +14,28 @@ const auth = new Elysia({ name: "auth" })
     const oauth_user = await OAuth2(query["code"] as string);
 
     // Check if user exists in DB
-    let user = await getUserByEmail(oauth_user.email);
+    let [u] = await db
+      .select()
+      .from(user)
+      .where(eq(user.email, oauth_user.email));
 
     // If not create it
-    if (!user) {
-      user = await createUser({ ...oauth_user, image: oauth_user.picture });
+    if (!u) {
+      [u] = await db
+        .insert(user)
+        .values({ ...oauth_user, image: oauth_user.picture })
+        .returning();
     }
 
     // Set cookie
     setCookie(
       "auth",
       await jwt.sign({
-        id: user.id.toString(),
-        name: user.name,
-        email: user.email,
-        image: user.image,
-        role: user.role,
+        id: u.id.toString(),
+        name: u.name,
+        email: u.email,
+        image: u.image,
+        role: u.role,
       }),
       {
         httpOnly: true,
@@ -38,7 +46,6 @@ const auth = new Elysia({ name: "auth" })
   })
   .get("/auth/navigation", ({ token }) => <UserNavigation user={token!} />, {
     beforeHandle: ({ token, set }) => {
-
       if (!token) {
         set.status = 401;
         return "Unauthorized";

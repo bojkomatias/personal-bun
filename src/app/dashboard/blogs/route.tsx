@@ -1,12 +1,11 @@
-import Elysia, { t } from "elysia";
-import { ParseHTML } from "@/utils/md-html";
+import Elysia from "elysia";
 import NewBlogPage from "./new/page";
 import setup from "@/config/setup";
 import { Blogs } from "./page";
 import { DashboardLayout } from "../layout";
-import { blogSchema } from "@/db/schema/blog";
-import { createBlog } from "@/services/blog";
+import { blog, blogSchema } from "@/db/schema/blog";
 import { Notification } from "@/components/notification";
+import { db } from "@/db";
 
 const blogs = new Elysia({ name: "dashboard-blogs", prefix: "/blog" })
   .use(setup)
@@ -23,9 +22,9 @@ const blogs = new Elysia({ name: "dashboard-blogs", prefix: "/blog" })
   .post(
     "/",
     async ({ body, set }) => {
-      console.log(body);
-      const res = await createBlog(body);
-      if (!res)
+      const r = await db.insert(blog).values(body).returning({ id: blog.id });
+
+      if (!r[0])
         return (
           <Notification
             isError

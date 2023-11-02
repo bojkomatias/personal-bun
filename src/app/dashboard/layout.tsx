@@ -2,23 +2,14 @@ import { dashboardNav } from "@/config/dashboard";
 import { Role } from "@/db/schema/user";
 import { dict } from "@/utils/dictionary";
 import { UserNavigation } from "@/modules/auth/user-nav";
-import { JWTPayloadSpec } from "@elysiajs/jwt";
 import { segment } from "@/components/ui/segment";
 import BaseTemplate from "../template";
-
-type User = {
-  id: string;
-  name: string;
-  image: string | null;
-  email: string;
-  role: "client" | "admin";
-} & JWTPayloadSpec;
 
 export const DashboardLayout = ({
   token,
   children,
 }: {
-  token: User;
+  token: TokenUser;
   children: JSX.Element | JSX.Element[];
 }) => (
   <BaseTemplate>

@@ -6,7 +6,7 @@ export default function Page() {
     <Layout>
       <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-          <h1 class="mt-10 max-w-lg">
+          <h1 class="mt-10 max-w-lg drop-shadow">
             A{" "}
             <span class="relative -z-10 inline-block drop-shadow-md before:absolute before:-inset-1 before:block before:rotate-3 before:-skew-x-6 before:-skew-y-6 before:bg-accent">
               <span class="relative font-black text-accent-foreground">

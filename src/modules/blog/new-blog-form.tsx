@@ -2,8 +2,6 @@ import { button } from "@/components/ui/button";
 import { card } from "@/components/ui/card";
 import { input, label } from "@/components/ui/input";
 
-const str = "sape sape";
-
 export function NewBlogForm() {
   return (
     <div class={card().base()}>
@@ -19,6 +17,16 @@ export function NewBlogForm() {
             id="title"
             name="title"
             placeholder="A title"
+            class={input()}
+          />
+          <label for="read" class={label()}>
+            Read time
+          </label>
+          <input
+            type="text"
+            id="read"
+            name="read"
+            placeholder="Read time"
             class={input()}
           />
           <label for="content" class={label()}>

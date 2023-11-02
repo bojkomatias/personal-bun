@@ -1,10 +1,11 @@
-import { InsertUser, userSchema } from "@/db/schema/user";
+import { InsertUser, user, userSchema } from "@/db/schema/user";
 import Profile from "@/modules/settings/profile";
 import setup from "@/config/setup";
-import { getUserById, updateUserAttribute } from "@/services/user";
 import Elysia, { t } from "elysia";
 import SettingsPage from "./page";
 import { DashboardLayout } from "../layout";
+import { db } from "@/db";
+import { eq } from "drizzle-orm";
 
 const settings = new Elysia({
   name: "settings",
@@ -26,14 +27,12 @@ const settings = new Elysia({
     }
   })
   .get("/", async ({ token, headers, set }) => {
-    const user = await getUserById(1);
-
     set.headers["Vary"] = "hx-target";
     return headers["hx-target"] === "dashboard-content" ? (
-      <SettingsPage user={user} />
+      <SettingsPage user={token} />
     ) : (
-      <DashboardLayout token={token!}>
-        <SettingsPage user={user} />
+      <DashboardLayout token={token}>
+        <SettingsPage user={token} />
       </DashboardLayout>
     );
   })
@@ -58,8 +57,13 @@ const settings = new Elysia({
         attr: keyof InsertUser,
         value: string | number | null,
       ];
-      const r = await updateUserAttribute(parseInt(id), attr, value);
-      return <Profile.Attribute id={id} attribute={attr} value={r} />;
+      const [r] = await db
+        .update(user)
+        .set({ [attr]: value })
+        .where(eq(user.id, parseInt(id)))
+        .returning({ [attr]: user[attr] });
+
+      return <Profile.Attribute id={id} attribute={attr} value={r[attr]} />;
     },
     { body: t.Partial(userSchema) },
   );

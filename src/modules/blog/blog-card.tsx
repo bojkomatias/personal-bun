@@ -13,7 +13,7 @@ export function BlogCard({ blog }: { blog: SelectBlog }) {
       </div>
 
       <div class={card().content()}>
-        <div class="blog-prose prose-sm line-clamp-6">
+        <div class="blog-prose prose-sm line-clamp-3">
           <hr />
           {ParseHTML(blog.content)}
         </div>
