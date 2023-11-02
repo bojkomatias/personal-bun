@@ -18,14 +18,12 @@ const page = new Elysia({
       },
     },
     (app) =>
-      app
-        .get("/", () => {
-          return <Page />;
-        })
-        .post("/", ({ body }) => console.log(body)),
+      app.get("/", () => {
+        return <Page />;
+      }),
   )
   .get("/docs", () => <Docs />)
-  .onError(({ error, code, set }) => {
+  .onError(({ code, set }) => {
     if (code === "NOT_FOUND") {
       set.headers["Content-Type"] = "text/html";
       return <NotFound />;

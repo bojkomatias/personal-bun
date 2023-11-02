@@ -22,6 +22,7 @@ export default function BaseTemplate({
       >
         {/* Notifications fall all here! */}
         <div id="notification" />
+        <div id="overlay" />
         <div id="page-content" class="min-h-[100svh] pt-4">
           {children}
         </div>
