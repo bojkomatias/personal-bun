@@ -50,15 +50,14 @@ export function Layout({ children }: { children?: any }) {
           ))}
         </nav>
       </header>
-
-      <main class="min-h-screen pt-12">{children}</main>
+      <main class="min-h-screen px-6 pb-20 pt-12 lg:px-8">{children}</main>
       <Footer />
     </BaseTemplate>
   );
 }
 
 const Footer = () => (
-  <footer class="border-t border-border bg-card px-2 py-8 sm:px-6 lg:px-16">
+  <footer class="border-t border-border bg-muted px-2 py-8 sm:px-6 lg:px-16">
     <div class="flex flex-col items-center gap-6 py-2 sm:flex-row">
       <nav class="flex flex-auto gap-6">
         {footerNavigation.map(({ name, href }) => (
@@ -76,7 +75,7 @@ const Footer = () => (
         ))}
       </nav>
 
-      <div class="relative h-12 w-36">
+      <div class="relative z-20 h-12 w-36">
         <RadiusPicker />
         <FontSizePicker />
         <ThemePicker />

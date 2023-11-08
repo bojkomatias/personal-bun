@@ -42,72 +42,93 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div class="relative isolate -z-10 bg-foreground">
-        <div class="overflow-hidden">
-          <div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
-            <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-              <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                <h1 class="text-4xl font-extrabold tracking-tight text-background sm:text-6xl">
-                  We’re changing the way people connect.
-                </h1>
-                <p class="relative mt-6 text-lg leading-8 text-muted sm:max-w-md lg:max-w-none">
-                  Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in
-                  quis cupidatat mollit aute velit. Et labore commodo nulla
-                  aliqua proident mollit ullamco exercitation tempor. Sint
-                  aliqua anim nulla sunt mollit id pariatur in voluptate cillum.
-                  Eu voluptate tempor esse minim amet fugiat veniam occaecat
-                  aliqua.
+
+      <div class="rounded-xl bg-card py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl sm:text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              About me
+            </h2>
+            <p class="mt-6 text-lg leading-8 text-muted-foreground">
+              We’re a dynamic group of individuals who are passionate about what
+              we do and dedicated to delivering the best results for our
+              clients.
+            </p>
+          </div>
+          <ul
+            role="list"
+            class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20"
+          >
+            <li class="flex flex-col gap-6 xl:flex-row">
+              <img
+                class="aspect-auto w-52 flex-none rounded-xl object-cover object-left"
+                src="/public/matute.webp"
+                alt=""
+              />
+              <div class="flex-auto">
+                <h3 class="text-lg font-semibold leading-8 tracking-tight text-foreground">
+                  Matías Bojko
+                </h3>
+                <p class="text-base leading-7 text-muted-foreground">
+                  Senior Software Engineer
+                </p>
+                <p class="mt-6 text-base leading-7 text-muted-foreground">
+                  Quia illum aut in beatae. Possimus dolores aliquid accusantium
+                  aut in ut non assumenda. Enim iusto molestias aut deleniti eos
+                  aliquid magnam molestiae. At et non possimus ab. Magni labore
+                  molestiae nulla qui.
                 </p>
               </div>
-              <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-                <div class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-                  <div class="relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-                      alt=""
-                      class="aspect-[2/3] w-full rounded-xl bg-accent object-cover shadow-lg shadow-muted-foreground"
-                    />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-ring"></div>
-                  </div>
-                </div>
-                <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                  <div class="relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-                      alt=""
-                      class="aspect-[2/3] w-full rounded-xl bg-accent object-cover shadow-lg shadow-muted-foreground"
-                    />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-ring"></div>
-                  </div>
-                  <div class="relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80"
-                      alt=""
-                      class="aspect-[2/3] w-full rounded-xl bg-accent object-cover shadow-lg shadow-muted-foreground"
-                    />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-ring"></div>
-                  </div>
-                </div>
-                <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                  <div class="relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
-                      alt=""
-                      class="aspect-[2/3] w-full rounded-xl bg-accent object-cover shadow-lg shadow-muted-foreground"
-                    />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-ring"></div>
-                  </div>
-                  <div class="relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-                      alt=""
-                      class="aspect-[2/3] w-full rounded-xl bg-accent object-cover shadow-lg shadow-muted-foreground"
-                    />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-ring"></div>
-                  </div>
-                </div>
-              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-background py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:max-w-none">
+            <div class="text-center">
+              <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Trusted by creators worldwide
+              </h2>
+              <p class="mt-4 text-lg leading-8 text-muted-foreground">
+                Lorem ipsum dolor sit amet consect adipisicing possimus.
+              </p>
             </div>
+            <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+              <div class="flex flex-col bg-muted p-8">
+                <dt class="text-sm font-semibold leading-6 text-muted-foreground">
+                  Clients on the platform
+                </dt>
+                <dd class="order-first text-3xl font-semibold tracking-tight text-foreground">
+                  80+
+                </dd>
+              </div>
+              <div class="flex flex-col bg-muted p-8">
+                <dt class="text-sm font-semibold leading-6 text-muted-foreground">
+                  Flat platform fee
+                </dt>
+                <dd class="order-first text-3xl font-semibold tracking-tight text-foreground">
+                  3%
+                </dd>
+              </div>
+              <div class="flex flex-col bg-muted p-8">
+                <dt class="text-sm font-semibold leading-6 text-muted-foreground">
+                  Uptime guarantee
+                </dt>
+                <dd class="order-first text-3xl font-semibold tracking-tight text-foreground">
+                  99.9%
+                </dd>
+              </div>
+              <div class="flex flex-col bg-muted p-8">
+                <dt class="text-sm font-semibold leading-6 text-muted-foreground">
+                  Raised in projects
+                </dt>
+                <dd class="order-first text-3xl font-semibold tracking-tight text-foreground">
+                  $70k
+                </dd>
+              </div>
+            </dl>
           </div>
         </div>
       </div>

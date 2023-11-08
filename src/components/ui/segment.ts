@@ -23,7 +23,7 @@ const item = tv({
       muted: "aria-checked:bg-muted aria-checked:text-card-foreground",
       background: "aria-checked:bg-accent aria-checked:text-accent-foreground",
       underline:
-        "after:invisible after:absolute after:inset-x-3 after:-bottom-1 after:h-0.5 after:rounded-lg after:bg-accent after:shadow after:shadow-accent/50 aria-checked:text-card-foreground aria-checked:after:visible",
+        "after:invisible after:absolute after:inset-x-3 after:-bottom-1 after:h-0.5 after:rounded-lg after:bg-accent after:shadow after:shadow-accent/20 aria-checked:text-card-foreground aria-checked:after:visible",
     },
   },
   defaultVariants: { style: "background" },

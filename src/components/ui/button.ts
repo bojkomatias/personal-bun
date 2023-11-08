@@ -6,7 +6,7 @@ export const button = tv(
     variants: {
       intent: {
         primary:
-          "bg-primary text-primary-foreground outline-primary hover:bg-primary/90",
+          "bg-primary text-primary-foreground outline-primary hover:bg-primary/90 hover:shadow-md hover:shadow-primary/20",
         secondary:
           "bg-secondary text-secondary-foreground outline-secondary hover:bg-secondary/90",
         accent:

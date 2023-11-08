@@ -38,23 +38,26 @@
     --text-6xl: 3.75rem;
     --text-7xl: 4.5rem;
 
+    --text: 1rem;
+    --golden-ratio: 1.618;
+
     --font-size-offset: 1;
     --line-ht: var(--font-size-offset) * 2;
   }
   /* Change theme */
   .dark {
-    --background: 240 10% 4%;
+    --background: 240 8% 10%;
     --foreground: 0 0% 96%;
-    --card: 240 10% 5%;
+    --card: 240 10% 12%;
     --card-foreground: 0 0% 92%;
-    --muted: 240 5% 10%;
-    --muted-foreground: 240 5% 75%;
+    --muted: 240 1% 16%;
+    --muted-foreground: 240 1% 75%;
 
-    --primary: 240 4% 95%;
+    --primary: 260 6% 96%;
     --primary-foreground: var(--background);
     --secondary: 240 4% 20%;
     --secondary-foreground: var(--foreground);
-    --accent: 240 2% 80%;
+    --accent: 230 10% 80%;
     --accent-foreground: var(--background);
   }
   .light {
@@ -193,7 +196,7 @@
     @apply text-lg font-semibold tracking-tight sm:text-xl;
   }
   h2 {
-    @apply text-2xl font-semibold tracking-tight sm:text-3xl;
+    @apply text-2xl font-bold tracking-tight sm:text-3xl;
   }
   h1 {
     @apply text-4xl font-extrabold tracking-tight sm:text-6xl;

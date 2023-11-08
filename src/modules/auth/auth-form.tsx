@@ -36,8 +36,13 @@ export const AuthForm = () => {
             />
             Continue with Google
           </a>
-          <div class="my-8 h-0 border-t border-border" />
-          <div class="px-2 text-sm">
+
+          <div
+            class={card().footer({
+              class:
+                "mt-8 border-t border-border px-2 text-sm text-muted-foreground",
+            })}
+          >
             By clicking "Continue with Google", you agree to our{" "}
             <a href="/" class={button({ intent: "link" })}>
               Terms of Service↗
