@@ -1,3 +1,5 @@
+import { button } from "./ui/button";
+
 export const Notification = ({
   title,
   description,
@@ -13,10 +15,16 @@ export const Notification = ({
     <div
       id="notification"
       hx-swap-oob="true"
-      class="fixed bottom-2 left-2 right-2 z-30 overflow-hidden rounded-lg bg-card shadow ring-1 ring-border duration-200 animate-in fade-in slide-in-from-bottom sm:bottom-8 sm:left-auto sm:right-4 sm:w-96"
-      _="init wait 4s then send close to me end
-      on close add .animate-out .slide-out-to-right .fade-out wait 0.19s hide me end"
+      class="fixed bottom-2 left-2 right-2 z-30 overflow-hidden rounded-lg bg-muted shadow ring-1 ring-ring duration-200 animate-in fade-in slide-in-from-bottom sm:bottom-8 sm:left-auto sm:right-4 sm:w-96"
     >
+      <script>
+        {`
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          closeNotification()
+        }, 3000);
+        `}
+      </script>
       <div class="p-4">
         <div class="flex items-start">
           <div class="flex-shrink-0">
@@ -32,16 +40,18 @@ export const Notification = ({
           </div>
           <div class="ml-3 w-0 flex-1 pt-0.5">
             <p class="text-sm font-medium">{title}</p>
-            <p class="mt-1 text-sm font-light text-gray-500">{description}</p>
+            <p class="mt-1 text-sm font-light text-muted-foreground">
+              {description}
+            </p>
           </div>
           <div class="ml-4 flex flex-shrink-0">
             <button
               type="button"
-              class="inline-flex rounded-lg p-1 focus-within:outline-gray-500 hover:bg-gray-50 focus:outline focus:outline-gray-500 focus-visible:outline-offset-0 dark:hover:bg-gray-900"
-              _="on click send close to #notification"
+              class={button({ size: "icon-sm" })}
+              hx-on:click="closeNotification()"
             >
               <span class="sr-only">Close</span>
-              <i class="i-lucide-x" />
+              <i class="i-lucide-x text-muted-foreground group-hover:text-inherit" />
             </button>
           </div>
         </div>

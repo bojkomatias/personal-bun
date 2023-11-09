@@ -5,6 +5,7 @@ import { SearchBar } from "../search-bar";
 import { Action, Column } from "./utils";
 import { dict } from "@/utils/dictionary";
 import { table } from "@/components/table";
+import { ariaExpand } from "../ui/event-handlers";
 
 export function DataTable<T>({
   children,
@@ -38,14 +39,15 @@ export function DataTable<T>({
           <i class="i-lucide-sliders" />
         </button>
         {/* Column Visibility */}
-        <div class={dropdown().base()}>
-          <button
-            class={button({ intent: "outline", size: "icon" })}
-            _={_trigger}
-          >
+        <div
+          class={dropdown().base()}
+          aria-haspopup="true"
+          hx-on:click={ariaExpand()}
+        >
+          <button class={button({ intent: "outline", size: "icon" })}>
             <i class="i-lucide-table-properties" />
           </button>
-          <div class={dropdown().content()} _={_content}>
+          <div class={dropdown().content()}>
             <div class={dropdown().header({ class: "text-sm font-semibold" })}>
               Columnas
             </div>

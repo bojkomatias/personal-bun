@@ -15,12 +15,14 @@ export default function BaseTemplate({
         hx-on:click="document.querySelectorAll(`[aria-haspopup='true']`).forEach(e => e.removeAttribute('aria-expanded'));"
         // Handles click outside for all menus
       >
-        {/* Notifications fall all here! */}
-        <div id="notification" />
+        {/* Overlay for modals */}
         <div id="overlay" />
+
         <div id="page-content" class="min-h-[100svh] pt-4">
           {children}
         </div>
+        {/* Notifications fall all here! */}
+        <div id="notification" />
       </body>
     </html>
   );

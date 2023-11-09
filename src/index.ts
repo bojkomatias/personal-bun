@@ -14,6 +14,8 @@ const app = new Elysia()
   .use(login)
   .use(dashboard)
   .get("/styles.css", () => Bun.file("./src/output.css"))
+  .get("/init.js", () => Bun.file("./src/config/init.js"))
+  .get("/defer.js", () => Bun.file("./src/config/defer.js"))
   .listen(3000);
 
 export type App = typeof app;

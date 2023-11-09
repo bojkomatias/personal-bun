@@ -30,12 +30,7 @@ export function Layout({ children }: { children?: any }) {
           hx-on:click="htmx.takeClass(event.target,'tab-indicator')"
           hx-preserve
         >
-          <a
-            class={segment().item({ class: "tab-indicator" })}
-            href={"/"}
-            hx-boost="true"
-            preload
-          >
+          <a class={segment().item()} href={"/"} hx-boost="true" preload>
             Home
           </a>
           {siteNavigation.map(({ name, href }) => (
@@ -43,6 +38,9 @@ export function Layout({ children }: { children?: any }) {
               {name}
             </a>
           ))}
+          {/* <script>
+            htmx.find("a[href='"+window.location.pathname+"']").classList.add('tab-indicator');
+          </script> */}
         </nav>
       </header>
       <main class="min-h-screen px-6 pb-20 pt-12 lg:px-8">{children}</main>
