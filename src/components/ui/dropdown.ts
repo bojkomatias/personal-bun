@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 
 export const dropdown = tv({
   slots: {
-    base: "group relative inline-block p-2 text-left",
+    base: "group relative inline-block text-left",
     header: "px-3 py-2",
     content: [
       "pointer-events-none absolute z-10 hidden w-64 rounded-lg bg-card p-2 shadow-md shadow-muted/10 ring-1 ring-border group-aria-expanded:block",
@@ -26,14 +26,3 @@ export const dropdown = tv({
   },
   defaultVariants: { position: "top-right" },
 });
-/**
- * @param e string (Hyperscript Listener)
- */
-export const _trigger =
-  "on click halt bubbling end on click send toggle to next .dropdown end";
-
-export const _content =
-  "on mouseover halt bubbling end on click halt bubbling end on toggle if @class contains 'dropdown-visible' send close to me else send open to me end on open take .dropdown-visible wait then remove .opacity-0 .scale-95 .-translate-y-1 end on close wait then add .opacity-0 .scale-95 .-translate-y-1 wait 0.05s then remove .dropdown-visible end";
-
-export const _hoverTrigger = "on mouseenter send open to next .dropdown end";
-export const _hoverBase = "on mouseleave send close to .dropdown in me";

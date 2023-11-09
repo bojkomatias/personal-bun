@@ -19,6 +19,7 @@ const blogs = new Elysia({ name: "dashboard-blogs", prefix: "/blog" })
       </DashboardLayout>
     );
   })
+  .get("/q", () => null)
   .post(
     "/",
     async ({ body, set }) => {

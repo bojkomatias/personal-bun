@@ -33,3 +33,10 @@ dict.set("view", "View");
 dict.set("back", "Back");
 dict.set("login", "Login");
 dict.set("logout", "Logout");
+
+// Table
+dict.set("columns", "Columns");
+
+// Blog
+dict.set("title", "Title");
+dict.set("read", "Read time");

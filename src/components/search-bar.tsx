@@ -15,8 +15,8 @@ export const SearchBar = (props: JSX.HtmlInputTag) => {
       <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center py-1.5 pl-3">
         <i class="i-lucide-search text-muted-foreground group-focus-within:text-foreground" />
       </div>
-      <div class="absolute inset-y-0 right-0 flex py-1.5 pr-2">
-        <kbd class="my-0.5 inline-flex items-center rounded border border-border bg-card px-1.5 font-sans text-xs text-muted-foreground">
+      <div class="absolute inset-y-0 right-0 flex py-1.5 pr-4">
+        <kbd class="my-0.5 inline-flex items-center rounded-sm border border-border bg-card px-1.5 font-sans text-xs text-muted-foreground">
           ⌘K
         </kbd>
       </div>

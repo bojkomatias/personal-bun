@@ -1,10 +1,10 @@
 import { cx } from "@/utils/cx";
-import { _trigger, dropdown, _content } from "@/components/ui/dropdown";
+import { dropdown } from "@/components/ui/dropdown";
 import { button } from "../ui/button";
 import { SearchBar } from "../search-bar";
 import { Action, Column } from "./utils";
 import { dict } from "@/utils/dictionary";
-import { table } from "@/components/table";
+import { table } from "@/components/ui/table";
 import { ariaExpand } from "../ui/event-handlers";
 
 export function DataTable<T>({
@@ -16,10 +16,8 @@ export function DataTable<T>({
   columns: Column<T>[];
   search?: {
     "hx-get": GetRoutes;
-    id: string;
     name: string;
     placeholder?: string;
-    key: string;
   };
 }) {
   return (
@@ -49,7 +47,7 @@ export function DataTable<T>({
           </button>
           <div class={dropdown().content()}>
             <div class={dropdown().header({ class: "text-sm font-semibold" })}>
-              Columnas
+              {dict.get("columns")}
             </div>
             <div class={dropdown().separator()} />
 
@@ -98,7 +96,7 @@ export function DataTable<T>({
                       )}", "sort": "asc" }`}
                       hx-target="next tbody"
                       hx-swap="innerHTML"
-                      class={button({ intent: "ghost", size: "xs" })}
+                      class={button({ size: "xs" })}
                       _={`on click if @hx-vals contains 'asc' 
                         then set @hx-vals to '{ "orderBy": "${String(
                           accessor,
@@ -111,9 +109,7 @@ export function DataTable<T>({
                       <i class="i-lucide-chevrons-up-down" />
                     </button>
                   ) : (
-                    <span class="text-accent-foreground">
-                      {header ? header : dict.get(accessor)}
-                    </span>
+                    <span>{header ? header : dict.get(accessor)}</span>
                   )}
                 </th>
               ))}
@@ -158,21 +154,19 @@ export function DataRows<T>({
           <td class={table().td({ class: "actions" })}>
             {actions.length > 0 ? (
               actions.length > 1 ? (
-                <div class={dropdown().base()}>
-                  <button
-                    class={button({ intent: "ghost", size: "icon-sm" })}
-                    _={_trigger}
-                  >
+                <div
+                  class={dropdown().base()}
+                  aria-haspopup="true"
+                  hx-on:click={ariaExpand()}
+                >
+                  <button class={button({ intent: "ghost", size: "icon-sm" })}>
                     <i class="i-lucide-more-horizontal" />
                   </button>
-                  <div
-                    class={dropdown().content({ class: "w-32 min-w-fit" })}
-                    _={_content}
-                  >
+                  <div class={dropdown().content({ class: "w-32 min-w-fit" })}>
                     {actions.map(
                       (action) =>
                         action(d) && (
-                          <button class={dropdown().item({})} {...action(d)} />
+                          <button class={dropdown().item()} {...action(d)} />
                         ),
                     )}
                   </div>

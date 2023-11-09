@@ -13,4 +13,5 @@ function init() {
   htmx.find('html').classList.add(localStorage.getItem('theme'), localStorage.getItem('theme-radius'), localStorage.getItem('theme-font-size'));
 
 };
-main();
+
+init();

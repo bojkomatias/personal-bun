@@ -20,4 +20,4 @@ function closeNotification() {
   }, 200);
 };
 
-def();
+defer();

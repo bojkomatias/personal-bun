@@ -8,7 +8,7 @@ export const table = tv({
     body: "divide-y divide-border",
     foot: "relative after:absolute after:inset-x-px after:inset-y-1 after:-z-10 after:rounded-lg after:bg-muted/50 after:ring-1 after:ring-border",
     tr: "w-full",
-    th: "table-cell px-3 py-3 text-left text-xs font-semibold last:text-right sm:first:pl-6 sm:last:pr-6",
-    td: "table-cell whitespace-nowrap px-3 py-3 text-sm text-accent-foreground first-of-type:pl-6 first-of-type:font-medium first-of-type:text-foreground last-of-type:text-right",
+    th: "table-cell px-3 py-3 text-left text-xs font-semibold text-foreground last:text-right sm:first:pl-6 sm:last:pr-6",
+    td: "table-cell whitespace-nowrap px-3 py-3 text-sm text-card-foreground first-of-type:pl-6 first-of-type:font-medium first-of-type:text-foreground last-of-type:text-right",
   },
 });
