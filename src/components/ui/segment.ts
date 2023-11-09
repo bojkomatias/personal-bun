@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants";
 import { button } from "./button";
 
 const base = tv({
-  base: "group relative flex h-max w-max items-stretch gap-1 p-1",
+  base: "group pointer-events-none relative flex h-max w-max items-stretch gap-1 p-1",
   variants: {
     vertical: { true: "flex-col" },
     static: { true: "is-open" },
@@ -17,7 +17,7 @@ const base = tv({
 
 const item = tv({
   extend: button,
-  base: "relative hidden group-[.is-open]:flex aria-checked:flex",
+  base: "relative hidden group-[.is-open]:flex group-aria-expanded:flex",
   variants: {
     style: {
       muted: "aria-checked:bg-muted aria-checked:text-card-foreground",

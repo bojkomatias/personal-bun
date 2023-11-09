@@ -4,6 +4,24 @@ import { Layout } from "./layout";
 export default function Page() {
   return (
     <Layout>
+      <button
+        class={button({ intent: "primary" })}
+        hx-get="/sleeper"
+        hx-swap="none"
+      >
+        Getter
+        <i class="htmx-indicator i-lucide-loader-2 animate-spin text-inherit" />
+      </button>
+      <button
+        class={button({
+          intent: "primary",
+        })}
+        hx-get="/sleeper"
+        hx-swap="none"
+      >
+        This is god
+      </button>
+
       <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
           <h1 class="mt-10 max-w-lg drop-shadow">

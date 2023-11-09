@@ -12,7 +12,10 @@ export default function UnderConstruction() {
           We'll having up and running soon, hopefully.
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-3">
-          <button _="on click go back" class={button({ intent: "primary" })}>
+          <button
+            hx-on:click="history.back()"
+            class={button({ intent: "primary" })}
+          >
             <i class="i-lucide-chevron-left h-4 w-4" /> Go back
           </button>
         </div>

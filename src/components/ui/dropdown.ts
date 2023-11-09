@@ -3,10 +3,10 @@ import { tv } from "tailwind-variants";
 
 export const dropdown = tv({
   slots: {
-    base: "relative inline-block p-2 text-left",
+    base: "group relative inline-block p-2 text-left",
     header: "px-3 py-2",
     content: [
-      "dropdown absolute z-10 w-64 -translate-y-1 scale-95 rounded-lg bg-card p-2 opacity-0 shadow-md shadow-muted/10 ring-1 ring-border",
+      "pointer-events-none absolute z-10 hidden w-64 rounded-lg bg-card p-2 shadow-md shadow-muted/10 ring-1 ring-border group-aria-expanded:block",
     ],
     separator: "my-1 h-0 border-t border-border",
     item: [

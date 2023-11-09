@@ -42,6 +42,8 @@
     --line-ht: var(--font-size-offset) * 2;
   }
   /* Change theme */
+  .acid {
+  }
   .dark {
     --background: 240 8% 10%;
     --foreground: 0 0% 96%;
@@ -202,6 +204,7 @@
   .blog-prose {
     @apply prose prose-sm mx-auto space-y-6 px-2 sm:prose-lg lg:prose-xl prose-a:text-primary prose-code:rounded-lg prose-code:text-sm prose-pre:rounded-xl prose-pre:bg-muted prose-pre:p-1.5 prose-hr:border-ring;
   }
+  .acid .blog-prose,
   .dark .blog-prose,
   .modern .blog-prose,
   .acid .blog-prose,
@@ -210,15 +213,13 @@
   }
 }
 
+/* Utilities mostly for one lining takeClass */
 @layer utilities {
-  .dropdown {
-    @apply hidden transition duration-75 ease-in;
-  }
-  .dropdown-visible {
-    @apply !flex flex-col duration-200 ease-out;
+  .bg-indicator {
+    @apply !flex !bg-accent !text-accent-foreground;
   }
   .tab-indicator {
-    @apply after:absolute after:inset-x-4 after:-bottom-1 after:h-0.5 after:rounded-lg after:bg-accent after:shadow after:shadow-accent/20;
+    @apply after:absolute after:inset-x-3 after:-bottom-1 after:h-0.5 after:rounded-lg after:bg-accent after:shadow after:shadow-accent/20;
   }
   .htmx-indicator {
     @apply hidden;

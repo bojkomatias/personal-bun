@@ -1,17 +1,21 @@
 import { button } from "@/components/ui/button";
-import { dropdown, _trigger, _content } from "@/components/ui/dropdown";
+import { dropdown } from "@/components/ui/dropdown";
+import { ariaExpand } from "@/components/ui/event-handlers";
 import { dict } from "@/utils/dictionary";
 
 export const UserNavigation = ({ user }: { user: TokenUser }) => {
   if (!user) return <></>;
   return (
-    <div class={dropdown().base({ class: "mr-4" })}>
+    <div
+      class={dropdown().base({ class: "mr-4" })}
+      hx-on:click={ariaExpand()}
+      aria-haspopup="true"
+    >
       <button
         class={button({
           class:
             "flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-muted/50 text-lg font-semibold uppercase text-muted-foreground ring-1 ring-border hover:bg-muted hover:text-foreground hover:ring-ring hover:ring-offset-2 hover:ring-offset-background focus:ring-offset-2 focus:ring-offset-background",
         })}
-        _={_trigger}
       >
         {user.image ? (
           <img src={user.image} class="h-8 w-8" alt="User image" />
@@ -20,7 +24,7 @@ export const UserNavigation = ({ user }: { user: TokenUser }) => {
         )}
       </button>
 
-      <div class={dropdown().content()} _={_content}>
+      <div class={dropdown().content()}>
         <div class={dropdown().header()}>
           <div class="text-sm font-semibold" safe>
             {user.name}

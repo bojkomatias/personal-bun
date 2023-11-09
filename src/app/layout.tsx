@@ -25,26 +25,21 @@ export function Layout({ children }: { children?: any }) {
       </div>
       <header class="z-20 flex h-12 items-center justify-center px-2">
         <nav
+          id="layout-navigation"
           class={segment().base({ style: "none", static: true })}
-          _={segment()._indicator()}
+          hx-on:click="htmx.takeClass(event.target,'tab-indicator')"
+          hx-preserve
         >
           <a
-            class={segment().item({ size: "base", style: "underline" })}
+            class={segment().item({ class: "tab-indicator" })}
             href={"/"}
             hx-boost="true"
             preload
-            _="init if window.location.pathname is '/' then add @aria-checked='true' end"
           >
             Home
           </a>
           {siteNavigation.map(({ name, href }) => (
-            <a
-              class={segment().item({ size: "base", style: "underline" })}
-              href={href}
-              hx-boost="true"
-              preload
-              _="init if window.location.pathname contains @href then add @aria-checked='true' end"
-            >
+            <a class={segment().item()} href={href} hx-boost="true" preload>
               {name}
             </a>
           ))}

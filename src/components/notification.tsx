@@ -13,9 +13,8 @@ export const Notification = ({
     <div
       id="notification"
       hx-swap-oob="true"
-      class="animate-in slide-in-from-bottom fade-in fixed bottom-2 left-2 right-2 z-30 overflow-hidden rounded-lg bg-card shadow ring-1 ring-border duration-200 sm:bottom-8 sm:left-auto sm:right-4 sm:w-96"
-      _="init end
-      init wait 4s then send close to me end
+      class="fixed bottom-2 left-2 right-2 z-30 overflow-hidden rounded-lg bg-card shadow ring-1 ring-border duration-200 animate-in fade-in slide-in-from-bottom sm:bottom-8 sm:left-auto sm:right-4 sm:w-96"
+      _="init wait 4s then send close to me end
       on close add .animate-out .slide-out-to-right .fade-out wait 0.19s hide me end"
     >
       <div class="p-4">

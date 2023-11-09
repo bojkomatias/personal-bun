@@ -10,15 +10,15 @@ export function InterceptedOverlay({
       id="overlay"
       hx-swap-oob="true"
       class="fixed inset-0 z-10 bg-muted/5 backdrop-blur"
-      _={`on click go back end`}
+      hx-on:click="history.back()"
     >
       <div
         class="fixed inset-12 rounded-xl bg-background p-3 pt-12 ring-1 ring-border"
-        _="on click halt bubbling end"
+        hx-on:click="event.stopPropagation()"
       >
         <button
           class={button({ size: "icon-sm", class: "fixed right-16 top-16" })}
-          _="on click go back"
+          hx-on:click="history.back()"
         >
           <i class="i-lucide-x" />
         </button>

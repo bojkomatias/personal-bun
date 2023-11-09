@@ -23,6 +23,10 @@ const page = new Elysia({
       }),
   )
   .get("/docs", () => <Docs />)
+  .get(
+    "/sleeper",
+    async () => await new Promise((resolve) => setTimeout(resolve, 2000)),
+  )
   .onError(({ code, set }) => {
     if (code === "NOT_FOUND") {
       set.headers["Content-Type"] = "text/html";

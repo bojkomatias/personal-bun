@@ -1,4 +1,5 @@
 import { button } from "./ui/button";
+import { ariaExpand, ariaSelect } from "./ui/event-handlers";
 import { segment } from "./ui/segment";
 
 type RadioItem = {
@@ -7,7 +8,8 @@ type RadioItem = {
 };
 type Radio = {
   items: RadioItem[];
-  id: string;
+  initialValue?: string;
+  handleChange?: string;
   class?: string;
   size: keyof typeof button.variants.size;
   vertical?: true;
@@ -21,12 +23,13 @@ export function RadioSegment(props: Radio) {
   return (
     <div
       role="radiogroup"
+      aria-haspopup="true"
       class={segment().base({
         vertical: props.vertical,
         static: props.static,
         class: props.class,
       })}
-      _={segment()._value(props.id)}
+      hx-on:click={ariaExpand(ariaSelect("bg-indicator", props.handleChange))}
     >
       {props.items.map(({ value, node }) => (
         <button
@@ -36,11 +39,14 @@ export function RadioSegment(props: Radio) {
             size: props.size,
             intent: "ghost",
           })}
-          aria-checked="false"
         >
           {node}
         </button>
       ))}
+      <script>
+        var x = {props.initialValue};
+        htmx.takeClass(htmx.find("button[value='"+x+"']"), 'bg-indicator');
+      </script>
     </div>
   );
 }

@@ -45,6 +45,8 @@ const Tabs = ({ role }: { role: Role }) => (
           preload
           _="init if window.location.pathname contains @hx-get then add @aria-checked='true' end"
         >
+          {`<span hx-on::afterOnLoad="console.log('saspe')">xd</span>`}
+
           <i class={item.icon} aria-hidden="true" />
           {dict.get(item.name)}
         </button>
