@@ -55,17 +55,17 @@ export function DataTable<T>({
               .filter((e) => !e.disableHiding)
               .map(({ accessor, header, hidden }) => (
                 <button
-                  _={`on click tell #${String(
+                  hx-on:click={`htmx.find('#${String(
                     accessor,
-                  )} in next <colgroup/> toggle .hidden end
-                  on click tell .${String(
+                  )}').classList.toggle('hidden');
+                  htmx.findAll('.${String(
                     accessor,
-                  )} in next <table/> toggle .hidden end
-                    on click toggle .hidden on <i/> in me`}
+                  )}').forEach(e=> e.classList.toggle('hidden'));
+                  `}
                   class={dropdown().item()}
                 >
                   <span> {header ? header : dict.get(accessor)}</span>
-                  <i class={cx("i-lucide-check", hidden && "hidden")} />
+                  <i class={cx("i-lucide-check", String(accessor))} />
                 </button>
               ))}
           </div>
@@ -82,12 +82,7 @@ export function DataTable<T>({
           <thead class={table().head()}>
             <tr class={table().tr()}>
               {columns.map(({ accessor, header, sortable }) => (
-                <th
-                  class={table().th({ class: String(accessor) })}
-                  _={`init if #${String(
-                    accessor,
-                  )} @class contains 'hidden' then add .hidden end`}
-                >
+                <th class={table().th({ class: String(accessor) })}>
                   {sortable ? (
                     <button
                       hx-get={search?.["hx-get"]}
@@ -97,13 +92,16 @@ export function DataTable<T>({
                       hx-target="next tbody"
                       hx-swap="innerHTML"
                       class={button({ size: "xs" })}
-                      _={`on click if @hx-vals contains 'asc' 
-                        then set @hx-vals to '{ "orderBy": "${String(
-                          accessor,
-                        )}", "sort": "desc" }'
-                        else set @hx-vals to '{ "orderBy": "${String(
-                          accessor,
-                        )}", "sort": "asc" }'`}
+                      hx-on:click={`if(this.getAttribute('hx-vals').includes('asc')){
+                          this.setAttribute('hx-vals', '{ "orderBy": "${String(
+                            accessor,
+                          )}", "sort": "desc" }');
+                        }
+                        else {
+                          this.setAttribute('hx-vals', '{ "orderBy": "${String(
+                            accessor,
+                          )}", "sort": "asc" }');
+                        }`}
                     >
                       {header ? header : dict.get(accessor)}
                       <i class="i-lucide-chevrons-up-down" />
@@ -142,12 +140,11 @@ export function DataRows<T>({
       {data.map((d) => (
         <tr class={table().tr()}>
           {columns.map(({ accessor, cell }) => (
-            <td
-              class={table().td({ class: String(accessor) })}
-              _={`init if #${String(
-                accessor,
-              )} @class contains 'hidden' then add .hidden end`}
-            >
+            <td class={table().td({ class: String(accessor) })}>
+              <script>
+                if(htmx.find('#{accessor}').matches('.hidden')) htmx.findAll('.
+                {accessor}').forEach(e {`=>`} e.classList.add('hidden'));
+              </script>
               {cell ? cell(d) : d[accessor]}
             </td>
           ))}

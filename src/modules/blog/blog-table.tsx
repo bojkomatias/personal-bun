@@ -18,10 +18,9 @@ const columns: Column<SelectBlog>[] = [
     disableHiding: true,
     sortable: true,
   },
+
   {
     accessor: "read",
-    disableHiding: true,
-    sortable: true,
   },
 ];
 const actions: Action<SelectBlog>[] = [];
