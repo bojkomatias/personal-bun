@@ -25,21 +25,6 @@
     --destructive-foreground: 0 0% 90%;
 
     --radius: 0.5rem;
-
-    --text-xs: 0.75rem;
-    --text-sm: 0.875rem;
-    --text-base: 1rem;
-    --text-lg: 1.125rem;
-    --text-xl: 1.25rem;
-    --text-2xl: 1.5rem;
-    --text-3xl: 1.875rem;
-    --text-4xl: 2.25rem;
-    --text-5xl: 3rem;
-    --text-6xl: 3.75rem;
-    --text-7xl: 4.5rem;
-
-    --font-size-offset: 1;
-    --line-ht: var(--font-size-offset) * 2;
   }
   /* Change theme */
   .acid {
@@ -186,19 +171,19 @@
     @apply selection:bg-accent selection:text-accent-foreground;
   }
   p {
-    @apply text-sm font-light sm:text-base;
+    @apply font-light;
   }
   h4 {
-    @apply text-base font-medium tracking-tight sm:text-lg;
+    @apply text-xl font-medium tracking-tight;
   }
   h3 {
-    @apply text-lg font-semibold tracking-tight sm:text-xl;
+    @apply text-2xl font-semibold tracking-tight;
   }
   h2 {
-    @apply text-2xl font-bold tracking-tight sm:text-3xl;
+    @apply text-3xl font-bold tracking-tight;
   }
   h1 {
-    @apply text-4xl font-extrabold tracking-tight sm:text-6xl;
+    @apply text-5xl font-extrabold tracking-tight;
   }
   /*  Custom re-usable prose tailwind typography */
   .blog-prose {

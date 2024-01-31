@@ -1,10 +1,9 @@
-import { footerNavigation, siteConfig, siteNavigation } from "@/config/site";
+import { footerNavigation, siteConfig } from "@/config/site";
 import { button } from "@/components/ui/button";
 import { ThemePicker } from "@/components/theme-picker";
 import { FontSizePicker } from "@/components/font-size-picker";
 import { RadiusPicker } from "@/components/radius-picker";
 import BaseTemplate from "./template";
-import { segment } from "@/components/ui/segment";
 import { PatternSquare } from "@/components/background-patterns";
 
 /** Used to inject into other layouts */
@@ -12,18 +11,8 @@ export function Layout({ children }: { children?: any }) {
   return (
     <BaseTemplate>
       <PatternSquare />
-      <div class="flex justify-end gap-2 px-4">
-        <button
-          class={button({ intent: "primary" })}
-          hx-get="/dashboard/settings"
-          hx-target="body"
-          hx-push-url="true"
-          preload
-        >
-          Dashboard
-        </button>
-      </div>
-      <header class="z-20 flex h-12 items-center justify-center px-2">
+      <div class="flex justify-end gap-2 px-4"></div>
+      {/* <header class="z-20 flex h-12 items-center justify-center px-2">
         <nav
           id="layout-navigation"
           class={segment().base({ style: "none", static: true })}
@@ -38,11 +27,8 @@ export function Layout({ children }: { children?: any }) {
               {name}
             </a>
           ))}
-          {/* <script>
-            htmx.find("a[href='"+window.location.pathname+"']").classList.add('tab-indicator');
-          </script> */}
         </nav>
-      </header>
+      </header> */}
       <main class="min-h-screen px-6 pb-20 pt-12 lg:px-8">{children}</main>
       <Footer />
     </BaseTemplate>

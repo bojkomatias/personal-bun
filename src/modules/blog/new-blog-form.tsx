@@ -36,7 +36,7 @@ export function NewBlogForm() {
             id="content"
             name="content"
             rows="8"
-            class={input({ class: "font-mono sm:text-base" })}
+            class={input({ class: "font-mono" })}
             placeholder="Write down some markdown ..."
           />
         </div>

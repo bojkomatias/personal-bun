@@ -10,17 +10,17 @@ export default withTV({
     extend: {
       fontFamily: { sans: ['Kumbh Sans', 'sans'], },
       fontSize: {
-        xs: ['calc(var(--text-xs) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xs))'],
-        sm: ['calc(var(--text-sm) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-sm))'],
-        base: ['calc(var(--text-base) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-base))'],
-        lg: ['calc(var(--text-lg) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-lg))'],
-        xl: ['calc(var(--text-xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
-        '2xl': ['calc(var(--text-2xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
-        '3xl': ['calc(var(--text-3xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
-        '4xl': ['calc(var(--text-4xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-xl))'],
-        '5xl': ['calc(var(--text-5xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-2xl))'],
-        '6xl': ['calc(var(--text-6xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-3xl))'],
-        '7xl': ['calc(var(--text-7xl) * var(--font-size-offset))', 'calc(var(--line-ht) * var(--text-3xl))'],
+        xs: "clamp(0.65rem, 0.08vw + 0.63rem, 0.71rem);",
+        sm: "clamp(0.81rem, 0.15vw + 0.77rem, 0.92rem);",
+        base: "clamp(1rem, 0.25vw + 0.94rem, 1.19rem);",
+        lg: "clamp(1.24rem, 0.39vw + 1.14rem, 1.53rem);",
+        xl: "clamp(1.54rem, 0.58vw + 1.39rem, 1.98rem);",
+        "2xl": "clamp(1.91rem, 0.86vw + 1.69rem, 2.55rem);",
+        "3xl": "clamp(2.36rem, 1.23vw + 2.06rem, 3.29rem);",
+        "4xl": "clamp(2.93rem, 1.75vw + 2.49rem, 4.24rem);",
+        "5xl": "clamp(3.64rem, 2.45vw + 3.02rem, 5.47rem);",
+        "6xl": "clamp(4.51rem, 3.4vw + 3.66rem, 7.06rem);",
+        "7xl": "clamp(5.59rem, 4.69vw + 4.42rem, 9.11rem);"
       },
       colors: {
         border: "hsl(var(--border) / 0.1)",
