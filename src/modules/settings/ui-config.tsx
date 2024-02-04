@@ -1,6 +1,5 @@
 import { card } from "@/components/ui/card";
 import { details } from "@/components/ui/detail-list";
-import { FontSizePickerFull } from "@/components/font-size-picker";
 
 import { RadiusPickerFull } from "@/components/radius-picker";
 import { ThemePickerFull } from "@/components/theme-picker";
@@ -12,13 +11,6 @@ export const UIConfig = () => (
 
     <div class={card().content({ class: "px-0" })}>
       <dl class={details().dl()}>
-        <div class={details().item()}>
-          <dt class={details().dt()}>Font size</dt>
-          <dd class={details().dd()}>
-            <span class="text-sm">Font size that suits you</span>
-            <FontSizePickerFull />
-          </dd>
-        </div>
         <div class={details().item()}>
           <dt class={details().dt()}>Theme</dt>
           <dd class={details().dd()}>

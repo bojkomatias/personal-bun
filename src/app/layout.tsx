@@ -1,7 +1,6 @@
 import { footerNavigation, siteConfig } from "@/config/site";
 import { button } from "@/components/ui/button";
 import { ThemePicker } from "@/components/theme-picker";
-import { FontSizePicker } from "@/components/font-size-picker";
 import { RadiusPicker } from "@/components/radius-picker";
 import BaseTemplate from "./template";
 import { PatternSquare } from "@/components/background-patterns";
@@ -29,7 +28,9 @@ export function Layout({ children }: { children?: any }) {
           ))}
         </nav>
       </header> */}
-      <main class="min-h-screen px-6 pb-20 pt-12 lg:px-8">{children}</main>
+      <main class="min-h-screen px-6 lg:px-8" id="main">
+        {children}
+      </main>
       <Footer />
     </BaseTemplate>
   );
@@ -56,7 +57,6 @@ const Footer = () => (
 
       <div class="relative z-20 h-12 w-36">
         <RadiusPicker />
-        <FontSizePicker />
         <ThemePicker />
       </div>
     </div>

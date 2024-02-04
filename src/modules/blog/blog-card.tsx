@@ -12,6 +12,7 @@ export function BlogCard({ blog }: { blog: SelectBlog }) {
           <span class="absolute inset-0" />
         </a>
         <div class="blog-prose line-clamp-6 group-hover:prose-headings:text-primary">
+          <h2 class="drop-shadow">{blog.title}</h2>
           {ParseHTML(blog.content)}
         </div>
       </div>
@@ -19,7 +20,7 @@ export function BlogCard({ blog }: { blog: SelectBlog }) {
       <div class="mt-6 flex items-center justify-between px-8">
         <div class="relative flex items-center gap-x-4">
           <img
-            src="/public/pelado.png"
+            src="/public/matute.webp"
             alt=""
             class="h-10 w-10 rounded-full bg-gray-50"
           />

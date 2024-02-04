@@ -36,7 +36,7 @@ export function RadiusPicker() {
         },
       ]}
       vertical
-      class="absolute bottom-0 right-24"
+      class="absolute bottom-0 right-12"
       size="icon"
       initialValue="localStorage.getItem('theme-radius')"
       handleChange={`htmx.find('html').classList.replace(localStorage.getItem('theme-radius'),htmx.closest(event.target,'button').value); localStorage.setItem('theme-radius', htmx.closest(event.target,'button').value);`}

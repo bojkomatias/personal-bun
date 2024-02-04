@@ -120,22 +120,6 @@
     --accent-foreground: var(--foreground);
   }
 
-  /* Change de font size */
-  .font-smaller {
-    --font-size-offset: 0.8;
-  }
-  .font-small {
-    --font-size-offset: 0.9;
-  }
-  .font-regular {
-    --font-size-offset: 1;
-  }
-  .font-large {
-    --font-size-offset: 1.1;
-  }
-  .font-larger {
-    --font-size-offset: 1.2;
-  }
   /* Change radius */
   .radius-none {
     --radius: -0.5rem;
@@ -167,6 +151,9 @@
   textarea::-webkit-resizer {
     -webkit-appearance: none;
   }
+  * {
+    @apply scroll-smooth;
+  }
   body {
     @apply selection:bg-accent selection:text-accent-foreground;
   }
@@ -174,7 +161,7 @@
     @apply font-light;
   }
   h4 {
-    @apply text-xl font-medium tracking-tight;
+    @apply text-xl font-medium leading-tight tracking-tight;
   }
   h3 {
     @apply text-2xl font-semibold tracking-tight;
@@ -183,7 +170,7 @@
     @apply text-3xl font-bold tracking-tight;
   }
   h1 {
-    @apply text-5xl font-extrabold tracking-tight;
+    @apply text-5xl font-extrabold leading-tight tracking-tight;
   }
   /*  Custom re-usable prose tailwind typography */
   .blog-prose {

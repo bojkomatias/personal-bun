@@ -16,10 +16,10 @@ export default async function BlogPage({ slug }: { slug: string }) {
           href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/night-owl.min.css"
         />
       </head>
-      <div class="float-left pl-2 lg:pl-10">
+      <div class="float-left pl-2 pt-8 lg:pl-10">
         <BackButton />
       </div>
-      <div class="blog-prose pb-20">
+      <div class="blog-prose pb-20 pt-8">
         <div class="flex justify-end text-sm leading-5">
           {IntlDate.format(new Date(b.createdAt))}
           <br />
