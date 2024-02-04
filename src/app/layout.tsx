@@ -55,7 +55,7 @@ const Footer = () => (
         ))}
       </nav>
 
-      <div class="relative z-20 h-12 w-36">
+      <div class="relative z-20 h-12 w-24">
         <RadiusPicker />
         <ThemePicker />
       </div>

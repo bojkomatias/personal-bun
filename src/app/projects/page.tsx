@@ -23,7 +23,7 @@ type ProjectCardType = {
 };
 export const ProjectCard = (props: ProjectCardType) => (
   <article class="relative isolate flex gap-8">
-    <div class="relative aspect-square w-64 shrink-0">
+    <div class="relative hidden aspect-square w-64 shrink-0 md:block">
       <img
         src={props.image}
         alt=""

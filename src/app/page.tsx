@@ -12,7 +12,7 @@ export default function Page() {
           <Hero />
           <Nav />
         </div>
-        <div class="space-y-96 py-24">
+        <div class="-mt-16 space-y-32 pb-24 md:-mt-10 md:space-y-48 lg:mt-32 lg:space-y-96">
           <Home />
           <SelectedProjects />
         </div>
@@ -22,26 +22,27 @@ export default function Page() {
 }
 
 const SelectedProjects = () => (
-  <div class="space-y-24">
-    <h2>
+  <div>
+    <h2 class="mb-12">
       <a id="projects" href="#projects">
         Selected Projects
       </a>
     </h2>
-
-    <ProjectCard
-      title="An I+D platform for a River Plate university"
-      description="Lorem blah blah"
-      badge="research & development"
-      image="/public/uap-vid.png"
-      date={new Date("04/09/2023")}
-    />
-    <ProjectCard
-      title="A proper way to manage your physician activities"
-      description="Lorem blah blah"
-      badge="healthcare"
-      image="/public/case-history.png"
-      date={new Date("12/03/2019")}
-    />
+    <div class="space-y-24">
+      <ProjectCard
+        title="I+D platform for River Plate university"
+        description="Researchers and professionals experts can publish papers and evaluate others. University assigns scholarship students to help field work, and funds approved researches. The platform allows for all of this to be track and saved, researchers, protocols, evaluations, budgeting, etc."
+        badge="research & development"
+        image="/public/uap-vid.png"
+        date={new Date("04/09/2023")}
+      />
+      <ProjectCard
+        title="A proper way to manage your physician activities"
+        description="Allows the personal physician to take diligent note of the consultation, keep track of patients and each case."
+        badge="healthcare"
+        image="/public/case-history.png"
+        date={new Date("12/03/2019")}
+      />
+    </div>
   </div>
 );
